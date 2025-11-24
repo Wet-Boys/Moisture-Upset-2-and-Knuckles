@@ -161,3 +161,5 @@
 - Scrapper: toilet (crapper)
 
 - Finish Jotaro captain?
+
+- Replace void zone audio with MKW creative exercise
