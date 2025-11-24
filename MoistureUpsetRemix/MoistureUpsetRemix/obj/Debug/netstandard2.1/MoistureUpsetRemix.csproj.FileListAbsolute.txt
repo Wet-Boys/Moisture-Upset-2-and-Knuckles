@@ -1,0 +1,11 @@
+/home/nunchuk/Documents/GitHub/Moisture-Upset-2-and-Knuckles/MoistureUpsetRemix/MoistureUpsetRemix/bin/Debug/netstandard2.1/MoistureUpset.deps.json
+/home/nunchuk/Documents/GitHub/Moisture-Upset-2-and-Knuckles/MoistureUpsetRemix/MoistureUpsetRemix/bin/Debug/netstandard2.1/MoistureUpset.dll
+/home/nunchuk/Documents/GitHub/Moisture-Upset-2-and-Knuckles/MoistureUpsetRemix/MoistureUpsetRemix/bin/Debug/netstandard2.1/MoistureUpset.pdb
+/home/nunchuk/Documents/GitHub/Moisture-Upset-2-and-Knuckles/MoistureUpsetRemix/MoistureUpsetRemix/obj/Debug/netstandard2.1/MoistureUpsetRemix.csproj.AssemblyReference.cache
+/home/nunchuk/Documents/GitHub/Moisture-Upset-2-and-Knuckles/MoistureUpsetRemix/MoistureUpsetRemix/obj/Debug/netstandard2.1/MoistureUpsetRemix.GeneratedMSBuildEditorConfig.editorconfig
+/home/nunchuk/Documents/GitHub/Moisture-Upset-2-and-Knuckles/MoistureUpsetRemix/MoistureUpsetRemix/obj/Debug/netstandard2.1/MoistureUpsetRemix.AssemblyInfoInputs.cache
+/home/nunchuk/Documents/GitHub/Moisture-Upset-2-and-Knuckles/MoistureUpsetRemix/MoistureUpsetRemix/obj/Debug/netstandard2.1/MoistureUpsetRemix.AssemblyInfo.cs
+/home/nunchuk/Documents/GitHub/Moisture-Upset-2-and-Knuckles/MoistureUpsetRemix/MoistureUpsetRemix/obj/Debug/netstandard2.1/MoistureUpsetRemix.csproj.CoreCompileInputs.cache
+/home/nunchuk/Documents/GitHub/Moisture-Upset-2-and-Knuckles/MoistureUpsetRemix/MoistureUpsetRemix/obj/Debug/netstandard2.1/MoistureUpsetRemix.sourcelink.json
+/home/nunchuk/Documents/GitHub/Moisture-Upset-2-and-Knuckles/MoistureUpsetRemix/MoistureUpsetRemix/obj/Debug/netstandard2.1/MoistureUpset.dll
+/home/nunchuk/Documents/GitHub/Moisture-Upset-2-and-Knuckles/MoistureUpsetRemix/MoistureUpsetRemix/obj/Debug/netstandard2.1/MoistureUpset.pdb
