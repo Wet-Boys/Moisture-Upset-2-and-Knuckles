@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.1": {},
     ".NETStandard,Version=v2.1/": {
-      "MoistureUpset/0.0.0-dev": {
+      "MoistureUpset/0.0.0-dev.2": {
         "dependencies": {
           "BepInEx.Core": "5.4.21",
           "MMHOOK.RoR2": "2025.6.3",
@@ -902,7 +902,7 @@
     }
   },
   "libraries": {
-    "MoistureUpset/0.0.0-dev": {
+    "MoistureUpset/0.0.0-dev.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

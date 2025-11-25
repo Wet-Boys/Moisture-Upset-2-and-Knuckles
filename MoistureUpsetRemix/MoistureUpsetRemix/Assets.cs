@@ -109,6 +109,20 @@ internal static class Assets
                         break;
                 }
             }
+            
+            //TODO make this the only way to read assets
+            foreach (var assetBundle in Directory.EnumerateFiles(FsUtils.AssetBundlesDir, "*", SearchOption.AllDirectories))
+            {
+                var assetBundleName = assetBundle;
+            
+                if (assetBundleName.StartsWith(FsUtils.AssetBundlesDir))
+                    assetBundleName = assetBundleName[FsUtils.AssetBundlesDir.Length..];
+
+                while (assetBundleName.StartsWith("/") || assetBundleName.StartsWith("\\"))
+                    assetBundleName = assetBundleName[1..];
+            
+                AddBundle(assetBundleName);
+            }
         }
 
         internal static void LoadSoundBanks()
@@ -199,10 +213,23 @@ internal static class Assets
             DebugClass.Log($"Loaded SoundBank: {location}");
         }
         
-        [Obsolete("AssetBundles are loaded automatically, calling this does literally nothing")]
-        public static void AddBundle(string assetBundleLocation)
+        public static void AddBundle(string bundleName)
         {
-            // Empty method because I don't want to go and remove stuff right now.
+            var assetBundleLoc = Path.Combine(FsUtils.AssetBundlesDir, bundleName);
+            AssetBundle assetBundle = AssetBundle.LoadFromFile(assetBundleLoc);
+
+            int index = AssetBundles.Count;
+            AssetBundles.Add(assetBundle);
+
+            foreach (var assetName in assetBundle.GetAllAssetNames())
+            {
+                var path = assetName.ToLowerInvariant();
+            
+                if (path.StartsWith("assets/"))
+                    path = path["assets/".Length..];
+
+                AssetIndices[path] = index;
+            }
         }
 
         public static T Load<T>(string assetName) where T : Object
