@@ -29,8 +29,11 @@ namespace MoistureUpsetRemix
             DebugClass.SetLogger(Logger);
             Assets.PopulateAssets();
             
-            
-            Beetle.Replace();
+            // On.RoR2.UI.MainMenu.BaseMainMenuScreen.OnEnter += (orig, self, menu) =>
+            // {
+            //     orig(self, menu);
+            // };
+            Beetle.ReplaceModel();
         }
     }
 }

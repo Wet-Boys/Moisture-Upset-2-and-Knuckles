@@ -1,3 +1,4 @@
+using RoR2;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -5,54 +6,49 @@ namespace MoistureUpsetRemix.Enemies;
 
 public class GenericFunctions
 {
-    internal static void ReplaceModel(string prefab, string mesh, string png, int position = 0, bool replaceothers = false)
+    internal static void ReplaceModel(GameObject fab, string mesh, string png, int position = 0, bool replaceothers = false)
+    {
+        var meshes = fab.GetComponentsInChildren<SkinnedMeshRenderer>();
+        var currentSmr = meshes[position];
+        currentSmr.sharedMesh = Assets.Load<Mesh>(mesh);
+        var texture = Assets.Load<Texture>(png);
+        DebugClass.Log($"shared mats length: {currentSmr.sharedMaterials.Length}");
+        //commented for now since it don't work
+        // for (int i = 0; i < currentSmr.sharedMaterials.Length; i++)
+        // {
+        //     currentSmr.sharedMaterials[i].color = Color.white;
+        //     currentSmr.sharedMaterials[i].mainTexture = texture;
+        //     currentSmr.sharedMaterials[i].SetTexture("_EmTex", null);
+        //     currentSmr.sharedMaterials[i].SetTexture("_NormalTex", null);
+        //     currentSmr.sharedMaterials[i].SetTexture("_FresnelRamp", null);
+        //     currentSmr.sharedMaterials[i].SetTexture("_FlowHeightRamp", null);
+        //     currentSmr.sharedMaterials[i].SetTexture("_FlowHeightmap", null);
+        // }
+        // if (replaceothers)
+        // {
+        //     for (int i = 0; i < meshes.Length; i++)
+        //     {
+        //         if (i != position)
+        //         {
+        //             meshes[i].sharedMesh = Assets.Load<Mesh>(mesh);
+        //         }
+        //     }
+        // }
+            
+            
+        //Can't seem to find a place to replace the material
+        var controller = fab.GetComponentInChildren<ModelSkinController>();
+        DebugClass.Log($"===================== {controller.skins.Length}");
+        foreach (var skin in controller.skins)
         {
-            var fab = Addressables.LoadAssetAsync<GameObject>(prefab).WaitForCompletion();
-            var meshes = fab.GetComponentsInChildren<SkinnedMeshRenderer>();
-            meshes[position].sharedMesh = Assets.Load<Mesh>(mesh);
-            var texture = Assets.Load<Texture>(png);
-            var blank = Assets.Load<Texture>("@MoistureUpset_na:assets/blank.png");
-            DebugClass.Log($"====================={meshes[position].sharedMaterials.Length}  {meshes.Length}");
-            for (int i = 0; i < meshes[position].sharedMaterials.Length; i++)
-            {
-                if (prefab == "RoR2/Base/Titan/TitanGoldBody.prefab")
-                {
-                    meshes[position].sharedMaterials[i].shader = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Commando/CommandoBody.prefab").WaitForCompletion().GetComponentInChildren<SkinnedMeshRenderer>().material.shader;
-                }
-                else if (prefab == "RoR2/Base/Shopkeeper/ShopkeeperBody.prefab")
-                {
-                    meshes[position].sharedMaterials[i] = Assets.LoadMaterial(png);
-                }
-                meshes[position].sharedMaterials[i].color = Color.white;
-                meshes[position].sharedMaterials[i].mainTexture = texture;
-                meshes[position].sharedMaterials[i].SetTexture("_EmTex", blank);
-                meshes[position].sharedMaterials[i].SetTexture("_NormalTex", null);
-                if (png.Contains("frog"))
-                {
-                    meshes[position].sharedMaterials[i].SetTexture("_FresnelRamp", null);
-                }
-                if (png.Contains("shop"))
-                {
-                    meshes[position].sharedMaterials[i].SetTexture("_FlowHeightRamp", null);
-                    meshes[position].sharedMaterials[i].SetTexture("_FlowHeightmap", null);
-                }
-                if (png.Contains("dankengine"))
-                {
-                    meshes[1].sharedMaterials[0].SetTexture("_MainTex", texture);
-                    meshes[position].sharedMaterials[i].SetTexture("_FresnelRamp", null);
-                    meshes[position].sharedMaterials[i].SetTexture("_FlowHeightRamp", null);
-                    meshes[position].sharedMaterials[i].SetTexture("_FlowHeightmap", null);
-                }
-            }
-            if (replaceothers)
-            {
-                for (int i = 0; i < meshes.Length; i++)
-                {
-                    if (i != position)
-                    {
-                        meshes[i].sharedMesh = Assets.Load<Mesh>(mesh);
-                    }
-                }
-            }
+            DebugClass.Log($"===================== 1 {skin}   2 {skin.skinDefParamsAddress.LoadAssetAsync().Result}");
         }
+
+        var targetModel = fab.GetComponentInChildren<CharacterModel>();
+        DebugClass.Log($"========================== {targetModel.baseRendererInfos.Length}");
+        foreach (var info in targetModel.baseRendererInfos)
+        {
+            info.defaultMaterial.mainTexture = texture;
+        }
+    }
 }

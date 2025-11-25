@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using RoR2;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -6,7 +7,15 @@ namespace MoistureUpsetRemix.Enemies;
 
 public class Beetle
 {
-    internal static void Replace()
+    internal static void ReplaceAll()
+    {
+        //return if settings are off
+        ReplaceModel();
+        ReplaceAudio();
+        ReplaceUI();
+        ReplaceOther();
+    }
+    internal static void ReplaceModel()
     {
         var fab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Beetle/BeetleBody.prefab").WaitForCompletion();
         List<Transform> t = new List<Transform>();
@@ -32,7 +41,21 @@ public class Beetle
             item.bones = t.ToArray();
         }
         DebugClass.Log("===================== frog");
-        GenericFunctions.ReplaceModel("RoR2/Base/Beetle/BeetleBody.prefab", "@MoistureUpset_frog:assets/frogchair.mesh", "@MoistureUpset_frog:assets/frogchair.png");
-        GenericFunctions.ReplaceModel("RoR2/Base/Lemurian/LemurianBody.prefab", "@MoistureUpset_mike:assets/mike.mesh", "@MoistureUpset_mike:assets/mike.png");
+        GenericFunctions.ReplaceModel(fab, "@MoistureUpset_frog:assets/frogchair.mesh", "@MoistureUpset_frog:assets/frogchair.png");
+    }
+
+    internal static void ReplaceAudio()
+    {
+        //change bark events and such
+    }
+
+    internal static void ReplaceUI()
+    {
+        //change dictionary terms, UI icons, etc.
+    }
+
+    internal static void ReplaceOther()
+    {
+        //Other components if needed. For example, roblox golems randomize their skin on spawn and flying lunar golems spin their bone every tick. Add those components and do other functions here.
     }
 }
