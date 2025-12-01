@@ -1,0 +1,66 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <LangVersion>preview</LangVersion>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Authors>Gemumoddo</Authors>
+        <AssemblyName>MoistureUpset</AssemblyName>
+        <Product>MoistureUpset</Product>
+        <BepInExPluginGuid>com.gemumoddo.MoistureUpset</BepInExPluginGuid>
+        <BepInExPluginName>Moisture Upset</BepInExPluginName>
+    </PropertyGroup>
+
+    <!-- MinVer -->
+    <PropertyGroup>
+        <MinVerDefaultPreReleaseIdentifiers>dev</MinVerDefaultPreReleaseIdentifiers>
+        <MinVerTagPrefix>v</MinVerTagPrefix>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MinVer" Version="5.0.0">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="BepInEx.Core" Version="5.4.21" />
+        <PackageReference Include="MMHOOK.RoR2" Version="2025.6.3" publicize="true" />
+        <PackageReference Include="MonoMod" Version="22.5.1.1" />
+        <PackageReference Include="R2API.CommandHelper" Version="1.0.2" />
+        <PackageReference Include="R2API.Language" Version="1.0.1" />
+        <PackageReference Include="R2API.Loadout" Version="1.0.2" />
+        <PackageReference Include="R2API.Networking" Version="1.0.3" />
+        <PackageReference Include="R2API.Sound" Version="1.0.3" />
+        <PackageReference Include="RiskOfRain2.GameLibs" Version="1.4.0-r.0" publicize="true" />
+        <PackageReference Include="UnityEngine.Modules" Version="2021.3.33" />
+        <PackageReference Include="Rune580.Mods.RiskOfRain2.RiskOfOptions" Version="2.8.3" />
+        <PackageReference Include="RoR2BepInExPack" Version="1.30.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <StubbedLibs Include="../../Libs/*.dll" InProject="false" />
+        <Reference Include="@(StubbedLibs)" />
+    </ItemGroup>
+
+    <Target Name="SetPluginVersion" BeforeTargets="AddGeneratedFile" DependsOnTargets="MinVer">
+        <PropertyGroup>
+            <PlainVersion>$(MinVerMajor).$(MinVerMinor).$(MinVerPatch)</PlainVersion>
+            <BepInExPluginVersion>$(PlainVersion)</BepInExPluginVersion>
+        </PropertyGroup>
+    </Target>
+
+    <Target Name="PackageThunderstoreArtifact" DependsOnTargets="SetPluginVersion" AfterTargets="PostBuildEvent" Condition="$(Configuration) == 'Release'">
+        <Exec Command="dotnet tcli build --config-path $(ProjectDir)../Thunderstore/thunderstore.toml --package-version $(PlainVersion)" />
+
+        <ItemGroup>
+            <FilesToRename Include="$(ProjectDir)../dist/*-$(PlainVersion).zip" />
+        </ItemGroup>
+
+        <Move SourceFiles="@(FilesToRename)" DestinationFiles="@(FilesToRename -&gt; Replace($(PlainVersion), $(MinVerVersion)))" />
+    </Target>
+
+    <Target Name="PublishThunderstoreArtifact" DependsOnTargets="SetPluginVersion">
+        <Exec Command="dotnet tcli publish --config-path $(ProjectDir)../Thunderstore/thunderstore.toml --file $(ProjectDir)../*-$(MinVerVersion).zip" />
+    </Target>
+</Project>
