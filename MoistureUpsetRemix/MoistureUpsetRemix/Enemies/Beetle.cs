@@ -57,5 +57,8 @@ public class Beetle
     internal static void ReplaceOther()
     {
         //Other components if needed. For example, roblox golems randomize their skin on spawn and flying lunar golems spin their bone every tick. Add those components and do other functions here.
+        
+        // var fab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Lemurian/LemurianBody.prefab").WaitForCompletion();
+        // GenericFunctions.ReplaceModel(fab, "@MoistureUpset_frog:assets/mike.mesh", "@MoistureUpset_frog:assets/mike.png");
     }
 }
