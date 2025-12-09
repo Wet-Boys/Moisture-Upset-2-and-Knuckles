@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
-using MoistureUpsetRemix;
+
+namespace MoistureUpsetRemix;
 
 internal static class FsUtils
 {

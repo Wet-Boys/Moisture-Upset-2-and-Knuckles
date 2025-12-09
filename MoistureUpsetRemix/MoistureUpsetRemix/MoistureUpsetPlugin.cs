@@ -2,30 +2,29 @@
 using BepInEx.Logging;
 using MoistureUpsetRemix.Enemies;
 
-namespace MoistureUpsetRemix
+namespace MoistureUpsetRemix;
+
+[BepInDependency("com.rune580.riskofoptions")]
+[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+public class MoistureUpsetPlugin : BaseUnityPlugin
 {
-    [BepInDependency("com.rune580.riskofoptions")]
-    [BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
-    public class MoistureUpsetPlugin : BaseUnityPlugin
-    {
-        public static MoistureUpsetPlugin Instance;
-        public static PluginInfo PluginInfo { get; private set; }
-        public new static ManualLogSource? Logger { get; private set; }
+    public static MoistureUpsetPlugin Instance;
+    public static PluginInfo PluginInfo { get; private set; }
+    public new static ManualLogSource? Logger { get; private set; }
         
-        public void Awake()
-        {
-            PluginInfo = Info;
-            Logger = base.Logger;
-            Instance = this;
+    public void Awake()
+    {
+        PluginInfo = Info;
+        Logger = base.Logger;
+        Instance = this;
             
-            DebugClass.SetLogger(Logger);
-            Assets.PopulateAssets();
+        DebugClass.SetLogger(Logger);
+        Assets.PopulateAssets();
             
-            // On.RoR2.UI.MainMenu.BaseMainMenuScreen.OnEnter += (orig, self, menu) =>
-            // {
-            //     orig(self, menu);
-            // };
-            Beetle.ReplaceModel();
-        }
+        // On.RoR2.UI.MainMenu.BaseMainMenuScreen.OnEnter += (orig, self, menu) =>
+        // {
+        //     orig(self, menu);
+        // };
+        Beetle.ReplaceModel();
     }
 }
