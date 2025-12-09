@@ -23,7 +23,7 @@ internal static class FsUtils
     {
         string BadInstallError()
         {
-            var modName = PluginInfo.PLUGIN_NAME;
+            var modName = MyPluginInfo.PLUGIN_NAME;
             var dllName = $"{nameof(MoistureUpsetPlugin)}.dll";
             var msg = $"{modName} can't find it's required AssetBundles!\n Make sure that the file `{dllName}` is in its own folder like `BepInEx/plugins/{modName}/{dllName}` and that the folder `AssetBundles` is in the same folder as `{dllName}`!";
             

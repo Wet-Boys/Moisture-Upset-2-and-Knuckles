@@ -9,7 +9,7 @@ namespace MoistureUpsetRemix
     public class MoistureUpsetPlugin : BaseUnityPlugin
     {
         public static MoistureUpsetPlugin Instance;
-        public static BepInEx.PluginInfo PluginInfo { get; private set; }
+        public static PluginInfo PluginInfo { get; private set; }
         public new static ManualLogSource? Logger { get; private set; }
         
         public void Awake()
@@ -17,6 +17,7 @@ namespace MoistureUpsetRemix
             PluginInfo = Info;
             Logger = base.Logger;
             Instance = this;
+            
             DebugClass.SetLogger(Logger);
             Assets.PopulateAssets();
             
