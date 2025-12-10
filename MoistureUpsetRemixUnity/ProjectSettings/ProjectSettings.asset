@@ -616,7 +616,20 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   webGLPowerPreference: 2
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Android: RISKOFRAIN2;TK_ADDRESSABLE
+    EmbeddedLinux: RISKOFRAIN2;TK_ADDRESSABLE
+    GameCoreXboxOne: RISKOFRAIN2;TK_ADDRESSABLE
+    Lumin: RISKOFRAIN2;TK_ADDRESSABLE
+    Nintendo Switch: RISKOFRAIN2;TK_ADDRESSABLE
+    PS4: RISKOFRAIN2;TK_ADDRESSABLE
+    PS5: RISKOFRAIN2;TK_ADDRESSABLE
+    Stadia: RISKOFRAIN2;TK_ADDRESSABLE
+    Standalone: RISKOFRAIN2;TK_ADDRESSABLE
+    WebGL: RISKOFRAIN2;TK_ADDRESSABLE
+    Windows Store Apps: RISKOFRAIN2;TK_ADDRESSABLE
+    XboxOne: RISKOFRAIN2;TK_ADDRESSABLE
+    tvOS: RISKOFRAIN2;TK_ADDRESSABLE
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}

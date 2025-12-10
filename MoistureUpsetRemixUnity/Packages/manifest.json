@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.passivepicasso.thunderkit": "https://github.com/PassivePicasso/ThunderKit.git#9.1.6",
     "com.unity.assetbundlebrowser": "https://github.com/Unity-Technologies/AssetBundles-Browser.git",
     "com.unity.collab-proxy": "2.2.0",
     "com.unity.feature.development": "1.0.1",
@@ -9,6 +10,7 @@
     "com.unity.test-framework": "1.1.33",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.6.5",
+    "com.unity.toolchain.linux-x86_64": "2.0.11",
     "com.unity.ugui": "1.0.0",
     "com.unity.visualscripting": "1.9.1",
     "org.khronos.unitygltf": "https://github.com/KhronosGroup/UnityGLTF.git",
