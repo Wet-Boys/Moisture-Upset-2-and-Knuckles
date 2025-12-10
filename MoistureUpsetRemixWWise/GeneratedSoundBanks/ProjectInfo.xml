@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo>
+	<Project Name="MoistureUpsetRemixWWise" GUID="{2ECB190B-11C6-4424-9107-FC7B3282E533}" Generator="2023.1.4.8496"/>
+	<CacheRoot>../.cache</CacheRoot>
+	<Platforms>
+		<Platform Name="Windows" GUID="{805773EF-99C4-4F27-8491-752AF29AA47C}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="Windows"/>
+	</Platforms>
+	<Languages>
+		<Language Name="English(US)" Id="684519430" GUID="{69013E36-9225-4BA9-8886-B621A59CD5B3}" Default="true" UseAsStandIn="true"/>
+	</Languages>
+	<FileHash>{6CCBF191-46AE-379E-8620-D4F9808C9C54}</FileHash>
+</ProjectInfo>

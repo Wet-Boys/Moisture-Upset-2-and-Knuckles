@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{7721D724-F195-BD77-83BC-3D741F531663}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+			<GameParameters>
+				<GameParameter Id="272410215" Name="MLGActive"/>
+				<GameParameter Id="396176897" Name="Volume_Emotes"/>
+				<GameParameter Id="681309163" Name="EscapeTimer"/>
+				<GameParameter Id="1010989040" Name="teleporterPlayerStatus"/>
+				<GameParameter Id="1057600524" Name="BossDead"/>
+				<GameParameter Id="1258942300" Name="MetalGear_Vocals"/>
+				<GameParameter Id="1652621980" Name="LobbyActivated"/>
+				<GameParameter Id="1924079656" Name="teleporterProximity"/>
+				<GameParameter Id="1991862712" Name="MainMenuMusic"/>
+				<GameParameter Id="2405499840" Name="Custom_Music"/>
+				<GameParameter Id="2480686711" Name="Modded_MSX"/>
+				<GameParameter Id="2669477582" Name="Modded_SFX"/>
+				<GameParameter Id="3098016834" Name="AirhornAudio"/>
+				<GameParameter Id="3138526208" Name="CustomRunMusic"/>
+				<GameParameter Id="3174072268" Name="RuneBadNoise"/>
+				<GameParameter Id="3314531505" Name="isInPortalRange"/>
+				<GameParameter Id="3448896237" Name="BossMusicActive"/>
+				<GameParameter Id="3673881719" Name="Volume_SFX"/>
+				<GameParameter Id="3695994288" Name="Volume_Master"/>
+				<GameParameter Id="3729143042" Name="Volume_MSX"/>
+				<GameParameter Id="4014092120" Name="teleporterDirection"/>
+			</GameParameters>
+		</SoundBank>
+		<SoundBank Id="3291379323" Type="User" Language="SFX" Hash="{1CAECF81-CF77-A0DD-708F-B15EB7D76CB7}">
+			<ShortName>TestBank</ShortName>
+			<Path>TestBank.bnk</Path>
+			<Media>
+				<File Id="573300004" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Dicks_Start.wav</ShortName>
+					<CachePath>SFX/Dicks_Start_2A9E8135.wem</CachePath>
+				</File>
+				<File Id="748213709" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Creative_Start.wav</ShortName>
+					<CachePath>SFX/Creative_Start_2A9E8135.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1214003200" Name="Play_Dicks">
+					<MediaRefs>
+						<MediaRef Id="573300004"/>
+						<MediaRef Id="748213709"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+			<GameParameters>
+				<GameParameter Id="272410215" Name="MLGActive"/>
+				<GameParameter Id="2480686711" Name="Modded_MSX"/>
+				<GameParameter Id="3695994288" Name="Volume_Master"/>
+				<GameParameter Id="3729143042" Name="Volume_MSX"/>
+			</GameParameters>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{22D44659-0BB6-3A9B-B9DA-E02FAEBA1F57}</FileHash>
+</SoundBanksInfo>

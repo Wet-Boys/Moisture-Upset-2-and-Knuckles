@@ -1,0 +1,13 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1214003200	Play_Dicks			\Default Work Unit\Play_Dicks	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	272410215	MLGActive			\Default Work Unit\MLGActive	
+	2480686711	Modded_MSX			\Default Work Unit\Modded_MSX	
+	3695994288	Volume_Master			\Default Work Unit\Volume_Master	
+	3729143042	Volume_MSX			\Default Work Unit\Volume_MSX	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	573300004	Dicks_Start	X:\MoistureUpsetRemixLink\MoistureUpsetRemixWWise\.cache\Windows\SFX\Dicks_Start_2A9E8135.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\Music Mixer\CreativeDicks\Dicks_Start		48684
+	748213709	Creative_Start	X:\MoistureUpsetRemixLink\MoistureUpsetRemixWWise\.cache\Windows\SFX\Creative_Start_2A9E8135.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\Music Mixer\CreativeDicks\Creative_Start		48010
+

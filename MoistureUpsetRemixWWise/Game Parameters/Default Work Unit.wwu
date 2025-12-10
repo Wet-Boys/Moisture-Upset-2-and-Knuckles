@@ -80,6 +80,7 @@
 						<Property Name="Max" Type="Real64" Value="1"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="Dicks" ID="{56D57B76-0F46-452C-A546-303DF1EEB7CB}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

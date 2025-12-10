@@ -1,6 +1,446 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{3C8220E1-44AE-4541-90E8-A5E99A93DADF}" SchemaVersion="119">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{3C8220E1-44AE-4541-90E8-A5E99A93DADF}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{3C8220E1-44AE-4541-90E8-A5E99A93DADF}" PersistMode="Standalone">
+			<ChildrenList>
+				<RandomSequenceContainer Name="Master Mixer" ID="{773A97FD-8F0A-4CA9-9ED1-EAFC91A2D941}" ShortID="983168094">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E10FD967-B3CD-4C8F-A771-A161BD020D46}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FC014A5-22A3-453F-8F58-2E9FBEB3980D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="Music Mixer" ID="{55461C70-09B7-4DCA-84F7-C0DC09E6D242}" ShortID="520571334">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>12</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E10FD967-B3CD-4C8F-A771-A161BD020D46}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FC014A5-22A3-453F-8F58-2E9FBEB3980D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="CreativeDicks" ID="{FE004E78-E2FC-43AA-83E9-A8AF8D2A393F}" ShortID="359295933">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>20</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E10FD967-B3CD-4C8F-A771-A161BD020D46}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FC014A5-22A3-453F-8F58-2E9FBEB3980D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<RandomSequenceContainer Name="DicksContainer" ID="{34DB0CC2-61ED-4C34-AB81-0223550DCF3E}" ShortID="298198244">
+											<PropertyList>
+												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.1"/>
+												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E10FD967-B3CD-4C8F-A771-A161BD020D46}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FC014A5-22A3-453F-8F58-2E9FBEB3980D}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="Dicks_End" ID="{A6F26F01-AC5A-4552-BB17-5D629800627C}" ShortID="6158034">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E10FD967-B3CD-4C8F-A771-A161BD020D46}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FC014A5-22A3-453F-8F58-2E9FBEB3980D}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Dicks_End" ID="{91A19BEB-C9AC-4B70-AD24-0966B803DE25}">
+															<Language>SFX</Language>
+															<AudioFile>Dicks_End.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="708228720"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Dicks_End" ID="{91A19BEB-C9AC-4B70-AD24-0966B803DE25}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Dicks_Loop" ID="{79A7C739-AEBA-4047-94F5-B96E1251C954}" ShortID="514336688">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E10FD967-B3CD-4C8F-A771-A161BD020D46}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FC014A5-22A3-453F-8F58-2E9FBEB3980D}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Dicks_Loop" ID="{C169A07C-30ED-49EF-9D4E-EA846EB168FE}">
+															<Language>SFX</Language>
+															<AudioFile>Dicks_Loop.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="25791961"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Dicks_Loop" ID="{C169A07C-30ED-49EF-9D4E-EA846EB168FE}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Dicks_Start" ID="{B68EBA1D-E31D-49FC-8C9C-39FA1521F60E}" ShortID="605860663">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E10FD967-B3CD-4C8F-A771-A161BD020D46}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FC014A5-22A3-453F-8F58-2E9FBEB3980D}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Dicks_Start" ID="{F622DCCA-F1EA-4CCD-A518-85EDC41D5E3B}">
+															<Language>SFX</Language>
+															<AudioFile>Dicks_Start.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="573300004"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Dicks_Start" ID="{F622DCCA-F1EA-4CCD-A518-85EDC41D5E3B}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Playlist">
+													<Reference>
+														<ObjectRef Name="Dicks_Start" ID="{B68EBA1D-E31D-49FC-8C9C-39FA1521F60E}" WorkUnitID="{3C8220E1-44AE-4541-90E8-A5E99A93DADF}"/>
+													</Reference>
+													<Reference>
+														<ObjectRef Name="Dicks_Loop" ID="{79A7C739-AEBA-4047-94F5-B96E1251C954}" WorkUnitID="{3C8220E1-44AE-4541-90E8-A5E99A93DADF}"/>
+													</Reference>
+													<Reference>
+														<ObjectRef Name="Dicks_End" ID="{A6F26F01-AC5A-4552-BB17-5D629800627C}" WorkUnitID="{3C8220E1-44AE-4541-90E8-A5E99A93DADF}"/>
+													</Reference>
+												</ObjectList>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{3E8990D1-897A-4660-A522-1BD5ED0BD35E}" ShortID="137922400">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Dicks" ID="{56D57B76-0F46-452C-A546-303DF1EEB7CB}" WorkUnitID="{B9B49DB5-B444-4F03-B90E-9B6841AB2DD3}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{86A22D5C-4E82-493B-8943-32842CEEC466}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="CreativeContainer" ID="{521D64C2-CB96-46D6-8D19-91799827A5AD}" ShortID="33994363">
+											<PropertyList>
+												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.1"/>
+												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E10FD967-B3CD-4C8F-A771-A161BD020D46}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FC014A5-22A3-453F-8F58-2E9FBEB3980D}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="Creative_End" ID="{15324611-1DCF-457C-8B54-BDFC9A63F325}" ShortID="1006665059">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E10FD967-B3CD-4C8F-A771-A161BD020D46}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FC014A5-22A3-453F-8F58-2E9FBEB3980D}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Creative_End" ID="{F33168C5-5C43-4614-8C2D-BB154520E155}">
+															<Language>SFX</Language>
+															<AudioFile>Creative_End.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="24889036"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Creative_End" ID="{F33168C5-5C43-4614-8C2D-BB154520E155}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Creative_Loop" ID="{A2A35922-2842-4BB7-A752-77D6D910709E}" ShortID="936542611">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E10FD967-B3CD-4C8F-A771-A161BD020D46}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FC014A5-22A3-453F-8F58-2E9FBEB3980D}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Creative_Loop" ID="{70718494-172E-4D52-9514-60D8D107F06A}">
+															<Language>SFX</Language>
+															<AudioFile>Creative_Loop.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="220417597"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Creative_Loop" ID="{70718494-172E-4D52-9514-60D8D107F06A}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Creative_Start" ID="{D96E9B4A-C2CD-4C80-BBD7-03CB539B639E}" ShortID="891520860">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E10FD967-B3CD-4C8F-A771-A161BD020D46}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FC014A5-22A3-453F-8F58-2E9FBEB3980D}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Creative_Start" ID="{E8C589D5-5E38-4A22-8081-D3DAC1D5466E}">
+															<Language>SFX</Language>
+															<AudioFile>Creative_Start.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="748213709"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Creative_Start" ID="{E8C589D5-5E38-4A22-8081-D3DAC1D5466E}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Playlist">
+													<Reference>
+														<ObjectRef Name="Creative_Start" ID="{D96E9B4A-C2CD-4C80-BBD7-03CB539B639E}" WorkUnitID="{3C8220E1-44AE-4541-90E8-A5E99A93DADF}"/>
+													</Reference>
+													<Reference>
+														<ObjectRef Name="Creative_Loop" ID="{A2A35922-2842-4BB7-A752-77D6D910709E}" WorkUnitID="{3C8220E1-44AE-4541-90E8-A5E99A93DADF}"/>
+													</Reference>
+													<Reference>
+														<ObjectRef Name="Creative_End" ID="{15324611-1DCF-457C-8B54-BDFC9A63F325}" WorkUnitID="{3C8220E1-44AE-4541-90E8-A5E99A93DADF}"/>
+													</Reference>
+												</ObjectList>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{1F8596C3-B0AC-49ED-9673-FD3EA82F4895}" ShortID="451556662">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="Dicks" ID="{56D57B76-0F46-452C-A546-303DF1EEB7CB}" WorkUnitID="{B9B49DB5-B444-4F03-B90E-9B6841AB2DD3}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{DBA35CDF-94DC-4351-A912-1542E976A5EB}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>0</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</RandomSequenceContainer>
+									</ChildrenList>
+								</RandomSequenceContainer>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<Reference>
+										<Local>
+											<RTPC Name="" ID="{93CAFBC3-2EF3-40D4-A326-0C4BD608F23E}" ShortID="54356227">
+												<PropertyList>
+													<Property Name="PropertyName" Type="string" Value="Volume"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="ControlInput">
+														<ObjectRef Name="Modded_MSX" ID="{818DD060-2C1F-4DB0-85C5-D565E3F70BF8}" WorkUnitID="{B9B49DB5-B444-4F03-B90E-9B6841AB2DD3}"/>
+													</Reference>
+													<Reference Name="Curve">
+														<Custom>
+															<Curve Name="" ID="{D680CBB7-8E86-48B0-B925-0939E59C2B80}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>0</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</RTPC>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<RTPC Name="" ID="{9F37AA56-00E0-4BF2-8BA3-424FCC2D453A}" ShortID="982261203">
+												<PropertyList>
+													<Property Name="PropertyName" Type="string" Value="Volume"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="ControlInput">
+														<ObjectRef Name="Volume_MSX" ID="{A5620F3D-62DE-4C50-8F19-2F30609C9F96}" WorkUnitID="{B9B49DB5-B444-4F03-B90E-9B6841AB2DD3}"/>
+													</Reference>
+													<Reference Name="Curve">
+														<Custom>
+															<Curve Name="" ID="{A1A99CE5-B853-4F55-9A12-0B2FF7BDD8C9}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-200</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>0</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</RTPC>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</RandomSequenceContainer>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="RTPC">
+							<Reference>
+								<Local>
+									<RTPC Name="" ID="{D85EE823-2809-446B-945F-1872814ADC18}" ShortID="31048701">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Volume"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="Volume_Master" ID="{4D4A96B1-04A6-4116-9A9B-737D0E70243A}" WorkUnitID="{B9B49DB5-B444-4F03-B90E-9B6841AB2DD3}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{B50F8E8C-A594-4AEB-8121-8FBDEE2080C4}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-200</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
+				</RandomSequenceContainer>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>

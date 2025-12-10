@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{A1642724-D84B-43D1-90DD-6BBECDE07BE1}" SchemaVersion="119">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{A1642724-D84B-43D1-90DD-6BBECDE07BE1}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{A1642724-D84B-43D1-90DD-6BBECDE07BE1}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_Dicks" ID="{9EA90654-539E-47D0-AD4F-19115CF900E7}">
+					<ChildrenList>
+						<Action Name="" ID="{AF7C60E4-BB9B-4C0D-B4B7-9454F7121ED4}" ShortID="764849624">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="CreativeContainer" ID="{521D64C2-CB96-46D6-8D19-91799827A5AD}" WorkUnitID="{3C8220E1-44AE-4541-90E8-A5E99A93DADF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{50C2144D-04FF-41FB-8916-F027A1CF3CD5}" ShortID="903906901">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="DicksContainer" ID="{34DB0CC2-61ED-4C34-AB81-0223550DCF3E}" WorkUnitID="{3C8220E1-44AE-4541-90E8-A5E99A93DADF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Finish_Dicks" ID="{F95219CC-7EB7-446D-B9A5-E852131B4784}">
+					<ChildrenList>
+						<Action Name="" ID="{BC34EDF2-F3DB-47B2-8E3E-5E8C7A744842}" ShortID="421383441">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Dicks_End" ID="{A6F26F01-AC5A-4552-BB17-5D629800627C}" WorkUnitID="{3C8220E1-44AE-4541-90E8-A5E99A93DADF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{A31312F5-8AD7-41B9-BD5D-66F132140EEC}" ShortID="81917776">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Dicks_Loop" ID="{79A7C739-AEBA-4047-94F5-B96E1251C954}" WorkUnitID="{3C8220E1-44AE-4541-90E8-A5E99A93DADF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>
