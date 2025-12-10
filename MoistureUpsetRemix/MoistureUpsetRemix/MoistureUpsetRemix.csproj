@@ -1,4 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+    
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
         <LangVersion>preview</LangVersion>
@@ -19,33 +20,37 @@
         <MinVerDefaultPreReleaseIdentifiers>dev</MinVerDefaultPreReleaseIdentifiers>
         <MinVerTagPrefix>v</MinVerTagPrefix>
     </PropertyGroup>
+    
+    <ItemGroup>
+        <ProjectReference Include="../MoistureUpsetRemix.Skins/MoistureUpsetRemix.Skins.csproj" />
+    </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.3">
+        <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="MinVer" Version="6.0.0">
+        <PackageReference Include="MinVer">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
-        <PackageReference Include="BepInEx.Analyzers" Version="1.0.8">
+        <PackageReference Include="BepInEx.Analyzers">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="BepInEx.Core" Version="5.4.21" />
-        <PackageReference Include="BepInEx.PluginInfoProps" Version="2.1.0" />
-        <PackageReference Include="MMHOOK.RoR2" Version="2025.11.19" publicize="true" />
-        <PackageReference Include="MonoMod" Version="22.5.1.1" />
-        <PackageReference Include="R2API.CommandHelper" Version="1.0.2" />
-        <PackageReference Include="R2API.Language" Version="1.1.0" />
-        <PackageReference Include="R2API.Loadout" Version="1.0.2" />
-        <PackageReference Include="R2API.Networking" Version="1.0.4" />
-        <PackageReference Include="R2API.Sound" Version="1.0.3" />
-        <PackageReference Include="RiskOfRain2.GameLibs" Version="1.4.0-r.0" publicize="true" />
-        <PackageReference Include="UnityEngine.Modules" Version="2021.3.33" />
-        <PackageReference Include="Rune580.Mods.RiskOfRain2.RiskOfOptions" Version="2.8.3" />
-        <PackageReference Include="RoR2BepInExPack" Version="1.38.0" />
+        <PackageReference Include="BepInEx.Core" />
+        <PackageReference Include="BepInEx.PluginInfoProps" />
+        <PackageReference Include="MMHOOK.RoR2" publicize="true" />
+        <PackageReference Include="MonoMod" />
+        <PackageReference Include="R2API.CommandHelper" />
+        <PackageReference Include="R2API.Language" />
+        <PackageReference Include="R2API.Loadout" />
+        <PackageReference Include="R2API.Networking" />
+        <PackageReference Include="R2API.Sound" />
+        <PackageReference Include="UnityEngine.Modules" />
+        <PackageReference Include="RiskOfRain2.GameLibs" publicize="true" />
+        <PackageReference Include="Rune580.Mods.RiskOfRain2.RiskOfOptions" />
+        <PackageReference Include="RoR2BepInExPack" />
     </ItemGroup>
 
     <ItemGroup>

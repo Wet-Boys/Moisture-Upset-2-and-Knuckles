@@ -1,0 +1,26 @@
+<Project>
+    
+    <PropertyGroup>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageVersion Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.3"/>
+        <PackageVersion Include="MinVer" Version="6.0.0"/>
+        <PackageVersion Include="BepInEx.Analyzers" Version="1.0.8"/>
+        <PackageVersion Include="BepInEx.Core" Version="5.4.21"/>
+        <PackageVersion Include="BepInEx.PluginInfoProps" Version="2.1.0"/>
+        <PackageVersion Include="MMHOOK.RoR2" Version="2025.12.9"/>
+        <PackageVersion Include="MonoMod" Version="22.5.1.1"/>
+        <PackageVersion Include="R2API.CommandHelper" Version="1.0.2"/>
+        <PackageVersion Include="R2API.Language" Version="1.1.0"/>
+        <PackageVersion Include="R2API.Loadout" Version="1.0.2"/>
+        <PackageVersion Include="R2API.Networking" Version="1.0.4"/>
+        <PackageVersion Include="R2API.Sound" Version="1.0.3"/>
+        <PackageVersion Include="UnityEngine.Modules" Version="2021.3.33"/>
+        <PackageVersion Include="RiskOfRain2.GameLibs" Version="1.4.0-r.0"/>
+        <PackageVersion Include="Rune580.Mods.RiskOfRain2.RiskOfOptions" Version="2.8.3"/>
+        <PackageVersion Include="RoR2BepInExPack" Version="1.38.0"/>
+    </ItemGroup>
+    
+</Project>
