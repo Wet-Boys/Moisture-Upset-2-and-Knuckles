@@ -1,7 +1,19 @@
 ManifestFileVersion: 0
-CRC: 2127439149
+CRC: 2001517638
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: meshtest
+      Name: skinfroggychair
+      Dependencies:
+        Dependency_0: mur-common-resources
+    Info_1:
+      Name: skinthomas
+      Dependencies:
+        Dependency_0: mur-common-resources
+    Info_2:
+      Name: mur-common-resources
       Dependencies: {}
+    Info_3:
+      Name: skinmike
+      Dependencies:
+        Dependency_0: mur-common-resources

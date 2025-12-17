@@ -1,17 +1,17 @@
 ManifestFileVersion: 0
-CRC: 1920524076
+CRC: 422504189
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 6cb74738d1a80c3794ff2791cc8de652
+    Hash: 145154188ab27cc94f5b29ccc41c77d9
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 78b4eb24b215c292a3fbe4dfa013d0e8
+    Hash: 87b0bba9d18ffc75f60c50b410bd4a4e
 HashAppended: 0
 ClassTypes:
-- Class: 43
+- Class: 48
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/RoR2/Base/Characters/BeetleGroup/Beetle/MeshTest.mesh
+- Assets/MoistureUpsetRemix/Shaders/HGStandardMock.shader
 Dependencies: []

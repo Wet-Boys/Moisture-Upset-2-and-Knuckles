@@ -7,6 +7,10 @@
     </PropertyGroup>
     
     <ItemGroup>
+        <ProjectReference Include="../MoistureUpsetRemix.Common/MoistureUpsetRemix.Common.csproj" />
+    </ItemGroup>
+    
+    <ItemGroup>
         <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -19,6 +23,8 @@
         <ItemGroup>
             <FilesToExport Include="$(OutDir)/$(AssemblyName).dll;$(OutDir)/$(AssemblyName).pdb" />
         </ItemGroup>
+
+        <Copy SourceFiles="@(FilesToExport)" DestinationFolder="../../MoistureUpsetRemixUnity/Packages/MoistureUpsetRemix" />
     </Target>
 
 </Project>

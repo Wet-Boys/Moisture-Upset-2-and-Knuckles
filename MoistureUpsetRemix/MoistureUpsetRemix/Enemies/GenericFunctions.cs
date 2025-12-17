@@ -1,3 +1,5 @@
+using MoistureUpsetRemix.Common.AssetManagement;
+using MoistureUpsetRemix.Common.Logging;
 using RoR2;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -11,7 +13,7 @@ public class GenericFunctions
         var meshes = fab.GetComponentsInChildren<SkinnedMeshRenderer>();
         var currentSmr = meshes[position];
         // currentSmr.sharedMesh = Assets.Load<Mesh>(mesh);
-        var texture = Assets.Load<Texture>(png);
+        var texture = AssetManager.Load<Texture>(png);
         // DebugClass.Log($"shared mats length: {currentSmr.sharedMaterials.Length}");
         //commented for now since it don't work
         // for (int i = 0; i < currentSmr.sharedMaterials.Length; i++)
@@ -41,11 +43,11 @@ public class GenericFunctions
             
         //Can't seem to find a place to replace the material
         var controller = fab.GetComponentInChildren<ModelSkinController>();
-        DebugClass.Log($"===================== {controller.skins.Length}");
+        Log.Debug($"===================== {controller.skins.Length}");
         foreach (var skin in controller.skins)
         {
             // var result = skin.skinDefParamsAddress.LoadAssetAsync().Result;
-            DebugClass.Log($"===================== 1 {skin}   2 {skin.skinDefParams}  3 {skin.optimizedSkinDefParams}  4 {skin.optimizedSkinDefParamsAddress.LoadAssetAsync().Result}");
+            Log.Debug($"===================== 1 {skin}   2 {skin.skinDefParams}  3 {skin.optimizedSkinDefParams}  4 {skin.optimizedSkinDefParamsAddress.LoadAssetAsync().Result}");
             // foreach (var info in skin.skinDefParamsAddress.LoadAssetAsync().Result.rendererInfos)
             // {
             //     DebugClass.Log($"===================== info: {info.defaultMaterialAddress.LoadAssetAsync().Result}");
@@ -57,7 +59,7 @@ public class GenericFunctions
         var meshReplacement = new SkinDefParams.MeshReplacement();
         var rendererReplacement = new CharacterModel.RendererInfo();
         meshReplacement.renderer = currentSmr;
-        meshReplacement.mesh = Assets.Load<Mesh>(mesh);
+        meshReplacement.mesh = AssetManager.Load<Mesh>(mesh);
         rendererReplacement.renderer = currentSmr;
         rendererReplacement.defaultMaterial = Addressables.LoadAssetAsync<Material>("RoR2/Base/Beetle/matBeetle.mat").WaitForCompletion();
         rendererReplacement.defaultMaterial.mainTexture = texture;

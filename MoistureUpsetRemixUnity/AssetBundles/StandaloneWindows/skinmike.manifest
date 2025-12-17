@@ -1,0 +1,34 @@
+ManifestFileVersion: 0
+CRC: 1206793179
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3cf0d087f42e0a79bed40ddb5f2e078c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 8e2e508378a228f76fb1671ef8161938
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 1696304386, guid: 7d7794ffcdbe1b76ea9db95ffb265b25, type: 3}
+- Class: 114
+  Script: {fileID: -1244124501, guid: 2dbab076938b0226fa3f54f68437ffd5, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: MoistureUpsetRemix.Skins
+  ClassName: MoistureUpsetRemix.Skins.ModelSkinControllerProxy
+- AssemblyName: MoistureUpsetRemix.Skins
+  ClassName: MoistureUpsetRemix.Skins.SkinDefMoistureUpsetRemix/SkinnedMeshRendererOverride
+Assets:
+- Assets/MoistureUpsetRemix/Enemies/Lemurian/skinMike.asset
+Dependencies:
+- /home/rune/RiderProjects/Moisture-Upset-2-and-Knuckles/MoistureUpsetRemixUnity/AssetBundles/StandaloneWindows/mur-common-resources

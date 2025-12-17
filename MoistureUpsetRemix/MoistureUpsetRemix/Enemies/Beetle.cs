@@ -1,5 +1,7 @@
 using System.Collections.Generic;
-using RoR2;
+using System.Linq;
+using MoistureUpsetRemix.Common.Logging;
+using MoistureUpsetRemix.Common.Utils;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -20,7 +22,10 @@ public class Beetle
         var fab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Beetle/BeetleBody.prefab").WaitForCompletion();
         List<Transform> t = new List<Transform>();
         //this is the fucking stupid but it works (minus claws)
-        foreach (var item in fab.GetComponentsInChildren<Transform>())
+        var transforms = fab.GetComponentsInChildren<Transform>();
+        Log.Debug(transforms.Select(t => t.name).ToDebugString());
+        
+        foreach (var item in transforms)
         {
             if (!item.name.Contains("Hurtbox") && !item.name.Contains("BeetleBody") && !item.name.Contains("Mesh") && !item.name.Contains("mdl"))
             {
@@ -30,17 +35,24 @@ public class Beetle
         Transform temp = t[14];
         t[14] = t[11];
         t[11] = temp;
+        
         temp = t[15];
         t[15] = t[12];
         t[12] = temp;
+        
         temp = t[16];
         t[16] = t[13];
         t[13] = temp;
+
+        var newBones = t.ToArray();
+        
+        Log.Info(newBones.Select(t => t.name).ToDebugString());
+        
         foreach (var item in fab.GetComponentsInChildren<SkinnedMeshRenderer>())
         {
-            item.bones = t.ToArray();
+            item.bones = newBones;
         }
-        DebugClass.Log("===================== frog");
+        Log.Debug("===================== frog");
         GenericFunctions.ReplaceModel(fab, "@MoistureUpset_frog:assets/frogchair.mesh", "@MoistureUpset_frog:assets/frogchair.png");
     }
 

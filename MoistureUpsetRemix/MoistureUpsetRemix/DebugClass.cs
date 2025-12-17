@@ -1,25 +1,15 @@
 using System;
 using System.Text;
-using BepInEx.Logging;
+using MoistureUpsetRemix.Common.AssetManagement;
+using MoistureUpsetRemix.Common.Logging;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.UI;
 
 namespace MoistureUpsetRemix;
 
 internal static class DebugClass
 {
-    private static ManualLogSource Logger;
-
-    public static void SetLogger(ManualLogSource logSource)
-    {
-        Logger = logSource;
-    }
-
-    public static void Log(object message)
-    {
-        Logger.Log(LogLevel.Info, $"{message}");
-    }
-
     public static void GetHierarchy(string name)
     {
         GameObject g = GameObject.Find(name);
@@ -34,14 +24,14 @@ internal static class DebugClass
         {
         }
 
-        Log("nutting");
+        Log.Debug("nutting");
         Hierarchy(g, "");
     }
 
     public static void Hierarchy(GameObject g, string depth)
     {
         depth += "--";
-        Log($"{depth}{g.name}");
+        Log.Debug($"{depth}{g.name}");
         foreach (Transform item in g.transform)
         {
             Hierarchy(item.gameObject, depth);
@@ -53,26 +43,26 @@ internal static class DebugClass
         GameObject g = GameObject.Find(name);
         try
         {
-            Log($"-------------{g.transform.parent.gameObject}");
+            Log.Debug($"-------------{g.transform.parent.gameObject}");
             return true;
         }
         catch (Exception)
         {
-            Log($"-------------no parent");
+            Log.Debug($"-------------no parent");
             return false;
         }
     }
 
     public static void UIdebug()
     {
-        UnityEngine.UI.Image[] objects = GameObject.FindObjectsOfType<UnityEngine.UI.Image>();
-        Log($"--------------uicomponents----------------");
+        Image[] objects = GameObject.FindObjectsOfType<Image>();
+        Log.Debug($"--------------uicomponents----------------");
         foreach (var item in objects)
         {
-            Log(item);
+            Log.Debug(item);
         }
 
-        Log($"------------------------------------------");
+        Log.Debug($"------------------------------------------");
     }
 
     // public static void UIdebugReplace()
@@ -88,11 +78,11 @@ internal static class DebugClass
     // }
     public static void TextureDebugReplace()
     {
-        Texture t = Assets.Load<Texture>("@MoistureUpset_noob:assets/Noob1TexLaser.png");
+        var t = AssetManager.Load<Texture>("@MoistureUpset_noob:assets/Noob1TexLaser.png");
         SkinnedMeshRenderer[] objects = GameObject.FindObjectsOfType<SkinnedMeshRenderer>();
         for (int i = 0; i < objects.Length; i++)
         {
-            Log($"------{objects[i].name}");
+            Log.Debug($"------{objects[i].name}");
             if (objects[i].name == "golem")
             {
                 foreach (var item in objects[i].sharedMaterials)
@@ -104,7 +94,7 @@ internal static class DebugClass
             //objects[i] = t;
         }
 
-        Log($"------end of list------");
+        Log.Debug($"------end of list------");
     }
 
     public static void ListComponents(string name)
@@ -112,38 +102,38 @@ internal static class DebugClass
         GameObject g = GameObject.Find(name);
         if (!g)
         {
-            Log($"----------------components----------------");
-            Log($"GameObject not found");
-            Log($"------------------------------------------");
+            Log.Debug($"----------------components----------------");
+            Log.Debug($"GameObject not found");
+            Log.Debug($"------------------------------------------");
             return;
         }
 
-        Log($"----------------components----------------");
+        Log.Debug($"----------------components----------------");
         foreach (var item in g.GetComponents<Component>())
         {
-            Log(item);
+            Log.Debug(item);
         }
 
-        Log($"------------------------------------------");
+        Log.Debug($"------------------------------------------");
     }
 
     public static void ListComponents(GameObject g)
     {
         if (!g)
         {
-            Log($"----------------components----------------");
-            Log($"GameObject not found");
-            Log($"------------------------------------------");
+            Log.Debug($"----------------components----------------");
+            Log.Debug($"GameObject not found");
+            Log.Debug($"------------------------------------------");
             return;
         }
 
-        Log($"----------------components----------------");
+        Log.Debug($"----------------components----------------");
         foreach (var item in g.GetComponentsInChildren<Component>())
         {
-            Log(item);
+            Log.Debug(item);
         }
 
-        Log($"------------------------------------------");
+        Log.Debug($"------------------------------------------");
     }
 
     public static void DebugBones(string resource, int pos = 0)
@@ -174,7 +164,7 @@ internal static class DebugClass
         }
 
         sb.Append("\n\n");
-        Log(sb.ToString());
+        Log.Debug(sb.ToString());
     }
 
     public static void DebugBones(GameObject fab)
@@ -203,7 +193,7 @@ internal static class DebugClass
         }
 
         sb.Append("\n\n");
-        Log(sb.ToString());
+        Log.Debug(sb.ToString());
     }
 
     public static void DebugBones(SkinnedMeshRenderer mesh)
@@ -217,7 +207,7 @@ internal static class DebugClass
 
         sb.Remove(sb.Length - 2, 2);
         sb.Append("]");
-        Log(sb.ToString());
+        Log.Debug(sb.ToString());
     }
 
     public static void GetAllGameObjects()
@@ -225,7 +215,7 @@ internal static class DebugClass
         GameObject[] objects = GameObject.FindObjectsOfType<GameObject>();
         foreach (var item in objects)
         {
-            ////Log($"-------sex----{item.name}");
+            ////Log.Debug($"-------sex----{item.name}");
             //if (item.name == "Mesh")
             //{
             //    try
@@ -236,7 +226,7 @@ internal static class DebugClass
             //    {
             //    }
             //}
-            Log($"-------------{item}");
+            Log.Debug($"-------------{item}");
         }
     }
 
@@ -245,7 +235,7 @@ internal static class DebugClass
         Transform[] objects = GameObject.FindObjectsOfType<Transform>();
         foreach (var item in objects)
         {
-            ////Log($"-------sex----{item.name}");
+            ////Log.Debug($"-------sex----{item.name}");
             //if (item.name == "Mesh")
             //{
             //    try
@@ -256,7 +246,7 @@ internal static class DebugClass
             //    {
             //    }
             //}
-            Log($"---{item}------parent:----{item.parent}");
+            Log.Debug($"---{item}------parent:----{item.parent}");
         }
     }
 
@@ -264,7 +254,7 @@ internal static class DebugClass
     {
         foreach (var item in g.GetComponents<GameObject>())
         {
-            Log($"-------sex----{item}");
+            Log.Debug($"-------sex----{item}");
         }
     }
 }

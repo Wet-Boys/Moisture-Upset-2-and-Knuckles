@@ -1,0 +1,19 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/MoistureUpsetRemix/Editor/Uxml/base.uss?fileID=7433441132597879392&amp;guid=b9dd824be3517e0078038f8c6f40965d&amp;type=3#base" />
+    <ui:VisualElement name="model-skin-controller-area">
+        <ui:Label text="Target" display-tooltip-when-elided="true" class="header-1" />
+        <ui:VisualElement name="prefab-row" class="left-right-labels">
+            <ui:Label text="Prefab" display-tooltip-when-elided="true" />
+            <ui:Label text="Placeholder/Prefab/Path" display-tooltip-when-elided="true" binding-path="msc.prefabAddressablePath" />
+        </ui:VisualElement>
+        <ui:VisualElement name="msc-row" class="left-right-labels">
+            <ui:Label text="ModelSkinController" display-tooltip-when-elided="true" />
+            <ui:Label text="Placeholder/MSC/Path" display-tooltip-when-elided="true" binding-path="msc.mscPath" />
+        </ui:VisualElement>
+        <ui:DropdownField label="Skin to Remap" index="-1" name="msc-skin-remap-dropdown" binding-path="targetSkinName" choices="choice" />
+        <ui:Button text="Select ModelSkinController" display-tooltip-when-elided="true" name="select-msc-button" />
+    </ui:VisualElement>
+    <ui:Foldout text="Skinned Mesh Renderers" name="smr-override-area" value="true">
+        <ui:ListView focusable="true" name="smr-override-list-view" show-add-remove-footer="false" show-foldout-header="false" show-alternating-row-backgrounds="All" show-border="false" virtualization-method="DynamicHeight" fixed-item-height="30" show-bound-collection-size="true" />
+    </ui:Foldout>
+</ui:UXML>

@@ -1,6 +1,8 @@
 ﻿using BepInEx;
-using BepInEx.Logging;
-using MoistureUpsetRemix.Enemies;
+using MoistureUpsetRemix.Common.AssetManagement;
+using MoistureUpsetRemix.Common.Logging;
+using MoistureUpsetRemix.Skins.Enemies;
+using MoistureUpsetRemix.Utils;
 
 namespace MoistureUpsetRemix;
 
@@ -8,23 +10,16 @@ namespace MoistureUpsetRemix;
 [BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
 public class MoistureUpsetPlugin : BaseUnityPlugin
 {
-    public static MoistureUpsetPlugin Instance;
-    public static PluginInfo PluginInfo { get; private set; }
-    public new static ManualLogSource? Logger { get; private set; }
-        
     public void Awake()
     {
-        PluginInfo = Info;
-        Logger = base.Logger;
-        Instance = this;
-            
-        DebugClass.SetLogger(Logger);
-        Assets.PopulateAssets();
-            
-        // On.RoR2.UI.MainMenu.BaseMainMenuScreen.OnEnter += (orig, self, menu) =>
-        // {
-        //     orig(self, menu);
-        // };
-        Beetle.ReplaceModel();
+        Log.SetLogger(new Logger(Logger));
+        AssetManager.SetAssetProvider(new AssetProvider());
+        
+        var beetle = new Beetle();
+        beetle.Apply();
+        var bison = new Bison();
+        bison.Apply();
+        var lemurian = new Lemurian();
+        lemurian.Apply();
     }
 }

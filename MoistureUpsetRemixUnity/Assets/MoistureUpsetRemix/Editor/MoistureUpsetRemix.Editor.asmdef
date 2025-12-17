@@ -1,0 +1,27 @@
+{
+    "name": "MoistureUpsetRemix.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:280569ac301428d4d950fdf647900922",
+        "GUID:88ec8ebc3c5c6901ea6dbf25bc15849b"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "com.unity.multiplayer-hlapi.Runtime.dll",
+        "RoR2.dll",
+        "Unity.Addressables.dll",
+        "Unity.ResourceManager.dll",
+        "MoistureUpsetRemix.Common.dll",
+        "MoistureUpsetRemix.Skins.dll",
+        "Newtonsoft.Json.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

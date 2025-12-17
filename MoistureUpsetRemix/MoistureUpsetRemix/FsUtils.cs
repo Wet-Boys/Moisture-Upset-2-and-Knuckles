@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using BepInEx.Bootstrap;
+using MoistureUpsetRemix.Common.Logging;
 
 namespace MoistureUpsetRemix;
 
@@ -22,18 +24,7 @@ internal static class FsUtils
 
     private static string? GetAssetBundlesDir()
     {
-        string BadInstallError()
-        {
-            var modName = MyPluginInfo.PLUGIN_NAME;
-            var dllName = $"{nameof(MoistureUpsetPlugin)}.dll";
-            var msg = $"{modName} can't find it's required AssetBundles!\n Make sure that the file `{dllName}` is in its own folder like `BepInEx/plugins/{modName}/{dllName}` and that the folder `AssetBundles` is in the same folder as `{dllName}`!";
-            
-            MoistureUpsetPlugin.Logger?.LogError(msg);
-            return msg;
-        }
-        
-        var pluginInfo = MoistureUpsetPlugin.PluginInfo;
-        if (pluginInfo is null)
+        if (!Chainloader.PluginInfos.TryGetValue(MyPluginInfo.PLUGIN_GUID, out var pluginInfo))
             return null;
         
         var dllLoc = pluginInfo.Location;
@@ -47,5 +38,14 @@ internal static class FsUtils
             throw new NotSupportedException(BadInstallError());
 
         return assetBundlesDir;
+
+        string BadInstallError()
+        {
+            const string msg = "MoistureUpset can't find it's required AssetBundles! This will cause many issues!\nThis either means your mod manager incorrectly installed MoistureUpset" +
+                               "or if you've manually installed MoistureUpset, you've done so incorrectly.";
+            
+            Log.Error(msg);
+            return msg;
+        }
     }
 }

@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/MoistureUpsetRemix/Editor/Uxml/base.uss?fileID=7433441132597879392&amp;guid=b9dd824be3517e0078038f8c6f40965d&amp;type=3#base" />
+    <ui:VisualElement name="smr-row" class="left-right-labels">
+        <ui:Label text="SkinnedMeshRenderer" display-tooltip-when-elided="true" />
+        <ui:Label text="Placeholder" display-tooltip-when-elided="true" name="smr-label" binding-path="smrPath" />
+    </ui:VisualElement>
+    <ui:VisualElement name="smr-mesh-preview-area" style="background-color: rgb(51, 51, 51); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-left-color: rgb(106, 106, 106); border-right-color: rgb(106, 106, 106); border-top-color: rgb(106, 106, 106); border-bottom-color: rgb(106, 106, 106);">
+        <ui:Label text="Original Mesh" display-tooltip-when-elided="true" style="-unity-text-align: middle-center; font-size: 14px;" />
+        <ui:IMGUIContainer name="smr-mesh-preview" style="height: 250px;" />
+    </ui:VisualElement>
+    <ui:Toggle name="mesh-override-toggle" binding-path="enableMeshOverride" text="Override Mesh" value="false">
+        <uie:ObjectField name="mesh-override" allow-scene-objects="false" type="UnityEngine.Mesh, UnityEngine.CoreModule" binding-path="meshOverride" focusable="true" picking-mode="Ignore" style="flex-grow: 1;" />
+    </ui:Toggle>
+    <uie:ObjectField label="Material Override" name="material-override" type="MoistureUpsetRemix.Common.Materials.HGStandardOverride, MoistureUpsetRemix.Common" binding-path="materialOverride" />
+    <ui:Button text="New Material Override" display-tooltip-when-elided="true" name="create-material-override-button" />
+</ui:UXML>

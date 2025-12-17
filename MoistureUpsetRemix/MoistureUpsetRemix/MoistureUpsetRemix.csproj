@@ -9,8 +9,8 @@
 
     <PropertyGroup>
         <Authors>Gemumoddo</Authors>
-        <AssemblyName>MoistureUpset</AssemblyName>
-        <Product>MoistureUpset</Product>
+        <AssemblyName>MoistureUpsetRemix</AssemblyName>
+        <Product>MoistureUpsetRemix</Product>
         <BepInExPluginGuid>com.gemumoddo.MoistureUpset</BepInExPluginGuid>
         <BepInExPluginName>Moisture Upset</BepInExPluginName>
     </PropertyGroup>
@@ -22,6 +22,7 @@
     </PropertyGroup>
     
     <ItemGroup>
+        <ProjectReference Include="../MoistureUpsetRemix.Common/MoistureUpsetRemix.Common.csproj" />
         <ProjectReference Include="../MoistureUpsetRemix.Skins/MoistureUpsetRemix.Skins.csproj" />
     </ItemGroup>
 
@@ -54,8 +55,13 @@
     </ItemGroup>
 
     <ItemGroup>
-        <StubbedLibs Include="../../Libs/*.dll" InProject="false" />
-        <Reference Include="@(StubbedLibs)" />
+        <Content Include="AssetBundles\**\*">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="MoistureUpsetRemix.csproj.user" />
     </ItemGroup>
 
     <Target Name="SetPluginVersion" BeforeTargets="AddGeneratedFile" DependsOnTargets="MinVer">
@@ -63,6 +69,14 @@
             <PlainVersion>$(MinVerMajor).$(MinVerMinor).$(MinVerPatch)</PlainVersion>
             <BepInExPluginVersion>$(PlainVersion)</BepInExPluginVersion>
         </PropertyGroup>
+    </Target>
+
+    <Target Name="CopyUnityAssetBundles" BeforeTargets="PreBuildEvent">
+        <ItemGroup>
+            <AssetBundles Include="../../MoistureUpsetRemixUnity/AssetBundles/StandaloneWindows/**/*" Exclude="**/StandaloneWindows;**/*.manifest" />
+        </ItemGroup>
+
+        <Copy SourceFiles="%(AssetBundles.Identity)" DestinationFiles="@(AssetBundles -&gt; Replace(../../MoistureUpsetRemixUnity/AssetBundles/StandaloneWindows/, AssetBundles/))" />
     </Target>
 
     <Target Name="PackageThunderstoreArtifact" DependsOnTargets="SetPluginVersion" AfterTargets="PostBuildEvent" Condition="$(Configuration) == 'Release'">

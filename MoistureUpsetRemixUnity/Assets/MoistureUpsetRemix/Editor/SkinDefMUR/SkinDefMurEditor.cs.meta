@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 19dc974cea63ba39fa83fb5baf1c0c91
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - uxml: {fileID: 9197481963319205126, guid: 5cd8d67445d2eb6cfa21cc4339775b96, type: 3}
+  - uss: {fileID: 7433441132597879392, guid: b9dd824be3517e0078038f8c6f40965d, type: 3}
+  - smrOverrideItemUxml: {fileID: 9197481963319205126, guid: 0206a68fb56b3120988a906709c76325, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

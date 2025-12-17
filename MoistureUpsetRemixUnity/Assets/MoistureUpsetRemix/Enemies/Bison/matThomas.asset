@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1696304386, guid: 7d7794ffcdbe1b76ea9db95ffb265b25, type: 3}
+  m_Name: matThomas
+  m_EditorClassIdentifier: 
+  originalMaterialAddressablePath: RoR2/Base/Bison/matBison.mat
+  overrideMaterial: {fileID: 2100000, guid: a9a2bdec6993fbfa1acfb5722f79f4fc, type: 2}

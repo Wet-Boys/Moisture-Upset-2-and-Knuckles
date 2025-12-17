@@ -1,0 +1,27 @@
+#model-skin-controller-area {
+    background-color: rgb(51, 51, 51);
+    padding-top: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+}
+
+.header-1 {
+    font-size: 16px;
+    -unity-text-align: middle-center;
+}
+
+.left-right-labels {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 3px;
+    margin-right: 2px;
+}
+
+Toggle .unity-base-field {
+    opacity: 0.5;
+}
+
+Toggle:checked .unity-base-field {
+    opacity: 1;
+}
