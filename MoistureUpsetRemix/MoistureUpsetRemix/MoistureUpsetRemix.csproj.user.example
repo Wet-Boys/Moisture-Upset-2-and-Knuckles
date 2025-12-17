@@ -1,14 +1,17 @@
 <Project>
-  <ItemGroup>
-    <!-- You can add additional files to deploy with another <FilesToDeploy> tag, you should probably leave this one alone though... -->
-    <FilesToDeploy Include="$(ProjectDir)/bin/Debug/netstandard2.1/MoistureUpset.dll;$(ProjectDir)/bin/Debug/netstandard2.1/MoistureUpset.pdb" />
-    
-    <!-- Add as many <DeployDirs> entries as you need, replacing what's inside of Include="..." with the path you want to deploy to -->
-    <DeployDirs Include="" />
-  </ItemGroup>
-  
-  <!-- Files will be copied whenever you Build the project -->
-  <Target Name="DeployFiles" AfterTargets="PostBuildEvent" DependsOnTargets="PackageThunderstoreArtifact">
-    <Copy SourceFiles="@(FilesToDeploy)" DestinationFolder="%(DeployDirs.Identity)/MoistureUpset" />
-  </Target>
+    <ItemGroup>
+        <!-- You can add additional files to deploy with another <FilesToDeploy> tag, you should probably leave this one alone though... -->
+        <FilesToDeploy Include="$(OutDir)/$(AssemblyName).dll;$(OutDir)/$(AssemblyName).pdb;$(OutDir)/$(AssemblyName).*.dll;$(OutDir)/$(AssemblyName).*.pdb"/>
+        
+        <AssetBundles Include="$(ProjectDir)/AssetBundles/**/*" />
+        
+        <!-- Add as many <DeployDirs> entries as you need, replacing what's inside of Include="..." with the path you want to deploy to -->
+        <DeployDirs Include=""/>
+    </ItemGroup>
+
+    <!-- Files will be copied whenever you Build the project -->
+    <Target Name="DeployFiles" AfterTargets="PostBuildEvent" DependsOnTargets="PackageThunderstoreArtifact">
+        <Copy SourceFiles="@(FilesToDeploy)" DestinationFolder="%(DeployDirs.Identity)/MoistureUpset"/>
+        <Copy SourceFiles="@(AssetBundles)" DestinationFolder="%(DeployDirs.Identity)/MoistureUpset/AssetBundles"/>
+    </Target>
 </Project>
