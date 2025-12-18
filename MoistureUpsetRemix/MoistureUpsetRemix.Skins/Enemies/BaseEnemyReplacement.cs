@@ -2,14 +2,18 @@ namespace MoistureUpsetRemix.Skins.Enemies;
 
 public abstract class BaseEnemyReplacement
 {
-    protected abstract SkinDefMoistureUpsetRemix SkinDef { get; }
+    public abstract SkinDefMoistureUpsetRemix SkinDef { get; }
+    
+    public abstract string ConfigName { get; }
+    
+    public abstract string ConfigDescription { get; }
 
     public void Apply()
     {
         var skinDef = SkinDef;
         BeforeApply(skinDef);
         
-        skinDef.ReplaceEnemySkin();
+        skinDef.AddEnemySkinToPrefab();
         
         AfterApply(skinDef);
     }

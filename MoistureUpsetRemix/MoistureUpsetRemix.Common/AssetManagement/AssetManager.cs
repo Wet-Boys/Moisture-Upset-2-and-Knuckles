@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using MoistureUpsetRemix.Common.Utils;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -34,16 +35,8 @@ public static class AssetManager
         var types = new HashSet<Type>();
         foreach (var assembly in assemblies)
         {
-            try
-            {
-                foreach (var type in assembly.GetTypes())
-                    types.Add(type);
-            }
-            catch (ReflectionTypeLoadException e)
-            {
-                foreach (var type in e.Types.Where(type => type != null))
-                    types.Add(type);
-            }
+            foreach (var type in assembly.GetTypesSafe())
+                types.Add(type);
         }
 
         var methods = new HashSet<MethodInfo>();

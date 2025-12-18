@@ -5,5 +5,7 @@ namespace MoistureUpsetRemix.Skins.Enemies;
 
 public class Lemurian : BaseEnemyReplacement
 {
-    protected override SkinDefMoistureUpsetRemix SkinDef => AssetManager.LoadSkin("Mike")!;
+    public override SkinDefMoistureUpsetRemix SkinDef => AssetManager.LoadSkin("Mike")!;
+    public override string ConfigName => "Mike";
+    public override string ConfigDescription => "Replace Lemurian with Mike.";
 }

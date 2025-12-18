@@ -5,5 +5,7 @@ namespace MoistureUpsetRemix.Skins.Enemies;
 
 public class Beetle : BaseEnemyReplacement
 {
-    protected override SkinDefMoistureUpsetRemix SkinDef => AssetManager.LoadSkin("FroggyChair")!;
+    public override SkinDefMoistureUpsetRemix SkinDef => AssetManager.LoadSkin("FroggyChair")!;
+    public override string ConfigName => "Froggy Chair";
+    public override string ConfigDescription => "Replace Beetle with Froggy Chair.";
 }

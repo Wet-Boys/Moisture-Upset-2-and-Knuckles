@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using MoistureUpsetRemix.Common.Logging;
 using MoistureUpsetRemix.Common.Materials;
 using RoR2;
 using UnityEngine;
@@ -16,19 +17,60 @@ public class SkinDefMoistureUpsetRemix : ScriptableObject
 
     public List<SkinnedMeshRendererOverride> smrOverrides = [];
 
-    public void ReplaceEnemySkin()
+    public int SkinIndex { get; private set; } = -1;
+
+    private SkinDef? _skinDef;
+
+    public void AddEnemySkinToPrefab()
     {
+        var skinDef = AsSkinDef();
+
         var prefabHandle = Addressables.LoadAssetAsync<GameObject>(msc.prefabAddressablePath);
 
         try
         {
             var prefab = prefabHandle.WaitForCompletion();
             if (!prefab)
+            {
+                Log.Error($"[{name}] Failed to find prefab at path: " + msc.prefabAddressablePath);
                 return;
+            }
 
             var mscTransform = prefab.transform.Find(msc.mscPath);
             if (!mscTransform)
+            {
+                Log.Error($"[{name}] Failed to find ModelSkinController at path: " + msc.mscPath);
                 return;
+            }
+
+            var modelSkinController = mscTransform.GetComponent<ModelSkinController>();
+            SkinIndex = modelSkinController.skins.Length;
+            Log.Debug($"[{name}] SkinIndex: {SkinIndex}");
+            Array.Resize(ref modelSkinController.skins, modelSkinController.skins.Length + 1);
+            modelSkinController.skins[^1] = skinDef;
+        }
+        finally
+        {
+            prefabHandle.Release();
+        }
+    }
+    
+    public SkinDef? AsSkinDef()
+    {
+        if (_skinDef)
+            return _skinDef;
+
+        var prefabHandle = Addressables.LoadAssetAsync<GameObject>(msc.prefabAddressablePath);
+
+        try
+        {
+            var prefab = prefabHandle.WaitForCompletion();
+            if (!prefab)
+                return null;
+
+            var mscTransform = prefab.transform.Find(msc.mscPath);
+            if (!mscTransform)
+                return null;
 
             var modelSkinController = mscTransform.GetComponent<ModelSkinController>();
             foreach (var skin in modelSkinController.skins)
@@ -36,7 +78,8 @@ public class SkinDefMoistureUpsetRemix : ScriptableObject
                 if (skin.name != targetSkinName)
                     continue;
 
-                var paramsRef = skin.skinDefParamsAddress;
+                var newSkin = Instantiate(skin);
+                var paramsRef = newSkin.skinDefParamsAddress;
 
                 var skinDefParams = paramsRef is null
                     ? skin.skinDefParams
@@ -47,7 +90,24 @@ public class SkinDefMoistureUpsetRemix : ScriptableObject
                 if (!skinDefParams)
                     continue;
 
-                skinDefParams!.meshReplacements = smrOverrides.Where(x => x.IsValid())
+                if (skinDefParams!.meshReplacements.Length == 0)
+                {
+                    skinDefParams.meshReplacements = modelSkinController.GetComponentsInChildren<SkinnedMeshRenderer>()
+                        .Select(smr => new SkinDefParams.MeshReplacement
+                        {
+                            renderer = smr,
+                            mesh = smr.sharedMesh
+                        }).ToArray();
+                }
+
+                var newParams = Instantiate(skinDefParams);
+                newSkin.skinDefParamsAddress = new AssetReferenceT<SkinDefParams>(null);
+                newSkin.skinDefParams = newParams;
+
+                newSkin.optimizedSkinDefParams = newParams;
+                newSkin.optimizedSkinDefParamsAddress = new AssetReferenceT<SkinDefParams>(null);
+
+                newParams!.meshReplacements = smrOverrides.Where(x => x.IsValid())
                     .Select(x =>
                     {
                         var renderer = prefab.transform.Find(x.smrPath).GetComponent<SkinnedMeshRenderer>();
@@ -58,7 +118,7 @@ public class SkinDefMoistureUpsetRemix : ScriptableObject
                         };
                     }).ToArray();
 
-                skinDefParams.rendererInfos = smrOverrides.Where(x => x.IsValid())
+                newParams.rendererInfos = smrOverrides.Where(x => x.IsValid())
                     .Where(x => x.materialOverride)
                     .Select(x =>
                     {
@@ -69,12 +129,17 @@ public class SkinDefMoistureUpsetRemix : ScriptableObject
                             defaultMaterial = x.materialOverride!.ConvertToHGStandard()
                         };
                     }).ToArray();
+
+                _skinDef = newSkin;
+                return _skinDef;
             }
         }
         finally
         {
             prefabHandle.Release();
         }
+
+        return null;
     }
 
     [Serializable]
