@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using BepInEx.Configuration;
 using MoistureUpsetRemix.Common.Logging;
+using MoistureUpsetRemix.Common.Utils;
 using MoistureUpsetRemix.Skins;
 using MoistureUpsetRemix.Skins.Enemies;
 using RiskOfOptions;
@@ -24,7 +26,7 @@ public static class EnemySkinReplacer
     {
         // var enemySkins = AppDomain.CurrentDomain.GetAssemblies()
         //     .SelectMany(assembly => assembly.GetTypesSafe())
-        //     .Where(t => t.IsAssignableFrom(typeof(BaseEnemyReplacement)) && !t.IsAbstract);
+        //     .Where(t => typeof(BaseEnemyReplacement).IsAssignableFrom(t) && !t.IsAbstract);
 
         foreach (var enemySkin in EnemyReplacementTypes)
         {

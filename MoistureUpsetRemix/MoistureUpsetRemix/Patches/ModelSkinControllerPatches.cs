@@ -22,8 +22,6 @@ public static class ModelSkinControllerPatches
         {
             var matcher = new CodeMatcher(instructions);
             
-            // Log.Debug(matcher.Instructions().ToDebugString());
-            
             var skinReplacementMethodInfo = AccessTools.Method(typeof(ModelSkinControllerPatches), nameof(ApplySkinReplacementIfAvailable));
 
             matcher.MatchForward(true,
@@ -40,8 +38,6 @@ public static class ModelSkinControllerPatches
             matcher.Advance(1);
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Ldloc_1));
             matcher.InsertAndAdvance(new CodeInstruction(OpCodes.Call, skinReplacementMethodInfo));
-            
-            // Log.Debug(matcher.Instructions().ToDebugString());
             
             return matcher.InstructionEnumeration();
         }

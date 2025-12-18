@@ -1,21 +1,17 @@
 ManifestFileVersion: 0
-CRC: 132560087
+CRC: 3354743881
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: b12370f2cadb38aec1f1bbaf01b281d7
+    Hash: e5e1489691e3425134f194faf9a2a0f9
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 8e2e508378a228f76fb1671ef8161938
+    Hash: e7f3d65067193a5223d58175548b698c
 HashAppended: 0
 ClassTypes:
-- Class: 21
-  Script: {instanceID: 0}
 - Class: 28
   Script: {instanceID: 0}
 - Class: 43
-  Script: {instanceID: 0}
-- Class: 48
   Script: {instanceID: 0}
 - Class: 114
   Script: {fileID: 1696304386, guid: 7d7794ffcdbe1b76ea9db95ffb265b25, type: 3}
@@ -24,11 +20,12 @@ ClassTypes:
 - Class: 115
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
+- AssemblyName: MoistureUpsetRemix.Common
+  ClassName: MoistureUpsetRemix.Common.Materials.TextureMaterialPropertyOverride
 - AssemblyName: MoistureUpsetRemix.Skins
   ClassName: MoistureUpsetRemix.Skins.ModelSkinControllerProxy
 - AssemblyName: MoistureUpsetRemix.Skins
   ClassName: MoistureUpsetRemix.Skins.SkinDefMoistureUpsetRemix/SkinnedMeshRendererOverride
 Assets:
 - Assets/MoistureUpsetRemix/Enemies/Beetle/skinFroggyChair.asset
-Dependencies:
-- /home/rune/RiderProjects/Moisture-Upset-2-and-Knuckles/MoistureUpsetRemixUnity/AssetBundles/StandaloneWindows/mur-common-resources
+Dependencies: []

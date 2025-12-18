@@ -23,7 +23,6 @@ public class MoistureUpsetPlugin : BaseUnityPlugin
 
         _harmony = Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), MyPluginInfo.PLUGIN_GUID);
         
-        
         EnemySkinReplacer.Register<Beetle>();
         EnemySkinReplacer.Register<Bison>();
         EnemySkinReplacer.Register<Lemurian>();

@@ -1,21 +1,17 @@
 ManifestFileVersion: 0
-CRC: 675239767
+CRC: 526628036
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 5226acdc15a979bbb256a8f80aba7861
+    Hash: a2ae009b933e7d41b8b82bc44341315f
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 8e2e508378a228f76fb1671ef8161938
+    Hash: e7f3d65067193a5223d58175548b698c
 HashAppended: 0
 ClassTypes:
-- Class: 21
-  Script: {instanceID: 0}
 - Class: 28
   Script: {instanceID: 0}
 - Class: 43
-  Script: {instanceID: 0}
-- Class: 48
   Script: {instanceID: 0}
 - Class: 114
   Script: {fileID: 1696304386, guid: 7d7794ffcdbe1b76ea9db95ffb265b25, type: 3}
@@ -24,11 +20,14 @@ ClassTypes:
 - Class: 115
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
+- AssemblyName: MoistureUpsetRemix.Common
+  ClassName: MoistureUpsetRemix.Common.Materials.FloatMaterialPropertyOverride
+- AssemblyName: MoistureUpsetRemix.Common
+  ClassName: MoistureUpsetRemix.Common.Materials.TextureMaterialPropertyOverride
 - AssemblyName: MoistureUpsetRemix.Skins
   ClassName: MoistureUpsetRemix.Skins.ModelSkinControllerProxy
 - AssemblyName: MoistureUpsetRemix.Skins
   ClassName: MoistureUpsetRemix.Skins.SkinDefMoistureUpsetRemix/SkinnedMeshRendererOverride
 Assets:
 - Assets/MoistureUpsetRemix/Enemies/Bison/skinThomas.asset
-Dependencies:
-- /home/rune/RiderProjects/Moisture-Upset-2-and-Knuckles/MoistureUpsetRemixUnity/AssetBundles/StandaloneWindows/mur-common-resources
+Dependencies: []

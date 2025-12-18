@@ -13,4 +13,25 @@ MonoBehaviour:
   m_Name: matMike
   m_EditorClassIdentifier: 
   originalMaterialAddressablePath: RoR2/Base/Lemurian/matLemurian.mat
-  overrideMaterial: {fileID: 2100000, guid: 56ca186bc184facf3a6e37f84b2d7e77, type: 2}
+  properties:
+  - rid: 1698329175614816259
+  - rid: 1698329175614816260
+  - rid: 1698329175614816261
+  references:
+    version: 2
+    RefIds:
+    - rid: 1698329175614816259
+      type: {class: TextureMaterialPropertyOverride, ns: MoistureUpsetRemix.Common.Materials, asm: MoistureUpsetRemix.Common}
+      data:
+        propertyName: _MainTex
+        value: {fileID: 2800000, guid: c8c520257d6a9c84caf80f8b623e37e1, type: 3}
+    - rid: 1698329175614816260
+      type: {class: TextureMaterialPropertyOverride, ns: MoistureUpsetRemix.Common.Materials, asm: MoistureUpsetRemix.Common}
+      data:
+        propertyName: _NormalTex
+        value: {fileID: 2800000, guid: 4554387070e1998b3bca9995e6b5dfad, type: 3}
+    - rid: 1698329175614816261
+      type: {class: FloatMaterialPropertyOverride, ns: MoistureUpsetRemix.Common.Materials, asm: MoistureUpsetRemix.Common}
+      data:
+        propertyName: _NormalStrength
+        value: 0.8

@@ -18,8 +18,7 @@ namespace MoistureUpsetRemix.Editor.SkinDefMUR
 
         private void OnEnable()
         {
-            _combinedMaterial = Target.GetCombinedMaterial(
-                AssetDatabase.LoadAssetAtPath<Shader>("Assets/MoistureUpsetRemix/Shaders/HGStandardMock.shader"));
+            _combinedMaterial = Target.CombineMaterialUsingShader(AssetDatabase.LoadAssetAtPath<Shader>("Assets/MoistureUpsetRemix/Shaders/HGStandardMock.shader"));
             if (!_combinedMaterial)
                 return;
             
@@ -103,7 +102,7 @@ namespace MoistureUpsetRemix.Editor.SkinDefMUR
 
         private void ApplyChanges()
         {
-            if (!_combinedMaterial || !Target.overrideMaterial)
+            if (!_combinedMaterial)
                 return;
 
             var shader = _combinedMaterial.shader;
@@ -122,8 +121,11 @@ namespace MoistureUpsetRemix.Editor.SkinDefMUR
                         var originalColor = (Color)_originalValues[propName];
                         if (newColor != originalColor)
                         {
-                            Target.overrideMaterial.SetColor(propName, newColor);
-                            dirty = true;
+                            Target.AddOverride(new ColorMaterialPropertyOverride(propName, newColor));
+                        }
+                        else
+                        {
+                            Target.RemoveOverride(propName);
                         }
                         break;
                     case ShaderPropertyType.Vector:
@@ -131,8 +133,11 @@ namespace MoistureUpsetRemix.Editor.SkinDefMUR
                         var originalVector = (Vector4)_originalValues[propName];
                         if (newVector != originalVector)
                         {
-                            Target.overrideMaterial.SetVector(propName, newVector);
-                            dirty = true;
+                            Target.AddOverride(new VectorMaterialPropertyOverride(propName, newVector));
+                        }
+                        else
+                        {
+                            Target.RemoveOverride(propName);
                         }
                         break;
                     case ShaderPropertyType.Float or ShaderPropertyType.Range:
@@ -140,8 +145,11 @@ namespace MoistureUpsetRemix.Editor.SkinDefMUR
                         var originalFloat = (float)_originalValues[propName];
                         if (newFloat != originalFloat)
                         {
-                            Target.overrideMaterial.SetFloat(propName, newFloat);
-                            dirty = true;
+                            Target.AddOverride(new FloatMaterialPropertyOverride(propName, newFloat));
+                        }
+                        else
+                        {
+                            Target.RemoveOverride(propName);
                         }
                         break;
                     case ShaderPropertyType.Texture:
@@ -149,20 +157,18 @@ namespace MoistureUpsetRemix.Editor.SkinDefMUR
                         var originalTexture = (Texture)_originalValues[propName];
                         if (newTexture != originalTexture)
                         {
-                            Target.overrideMaterial.SetTexture(propName, newTexture);
-                            dirty = true;
+                            Target.AddOverride(new TextureMaterialPropertyOverride(propName, newTexture));
+                        }
+                        else
+                        {
+                            Target.RemoveOverride(propName);
                         }
                         break;
                 }
             }
             
-            if (dirty)
-            {
-                EditorUtility.SetDirty(Target.overrideMaterial);
-                EditorUtility.SetDirty(Target);
-                AssetDatabase.SaveAssetIfDirty(Target.overrideMaterial);
-                AssetDatabase.SaveAssetIfDirty(Target);
-            }
+            EditorUtility.SetDirty(Target);
+            AssetDatabase.SaveAssetIfDirty(Target);
         }
     }
 }

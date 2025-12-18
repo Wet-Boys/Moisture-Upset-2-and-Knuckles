@@ -126,7 +126,7 @@ public class SkinDefMoistureUpsetRemix : ScriptableObject
                         return new CharacterModel.RendererInfo
                         {
                             renderer = renderer,
-                            defaultMaterial = x.materialOverride!.ConvertToHGStandard()
+                            defaultMaterial = x.materialOverride!.GetOverridenMaterial()
                         };
                     }).ToArray();
 

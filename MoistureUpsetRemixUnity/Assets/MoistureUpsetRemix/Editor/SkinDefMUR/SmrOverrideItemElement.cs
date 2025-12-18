@@ -93,18 +93,15 @@ namespace MoistureUpsetRemix.Editor.SkinDefMUR
 
                 AssetDatabase.CreateAsset(instance, path);
                 
-                var overrideMatPath = path.Replace(".asset", ".mat");
-                var newMat = new Material(AssetDatabase.LoadAssetAtPath<Shader>("Assets/MoistureUpsetRemix/Shaders/HGStandardMock.shader"));
-                AssetDatabase.CreateAsset(newMat, overrideMatPath);
-                
                 AssetDatabase.Refresh();
                 
                 var loadedOverride = AssetDatabase.LoadAssetAtPath<HGStandardOverride>(path);
                 loadedOverride.originalMaterialAddressablePath = matPath;
-                loadedOverride.overrideMaterial = AssetDatabase.LoadAssetAtPath<Material>(overrideMatPath);
                 
                 EditorUtility.SetDirty(loadedOverride);
                 AssetDatabase.SaveAssetIfDirty(loadedOverride);
+                
+                AssetDatabase.Refresh();
                 
                 matOverrideField.value = loadedOverride;
                 item.MaterialOverride = loadedOverride;
