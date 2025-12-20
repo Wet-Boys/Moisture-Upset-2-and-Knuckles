@@ -14,8 +14,8 @@ public class SkinDefMoistureUpsetRemix : ScriptableObject
 {
     public ModelSkinControllerProxy msc;
     public string targetSkinName = "";
-
     public List<SkinnedMeshRendererOverride> smrOverrides = [];
+    public List<ProjectileGhostOverride> projectileGhostOverrides = [];
 
     public int SkinIndex { get; private set; } = -1;
 
@@ -130,6 +130,16 @@ public class SkinDefMoistureUpsetRemix : ScriptableObject
                         };
                     }).ToArray();
 
+                newParams.projectileGhostReplacements = projectileGhostOverrides.Select(x =>
+                {
+                    var target = Addressables.LoadAssetAsync<GameObject>(x.targetProjectile).WaitForCompletion();
+                    return new SkinDefParams.ProjectileGhostReplacement
+                    {
+                        projectilePrefab = target,
+                        projectileGhostReplacementPrefab = x.projectileGhost
+                    };
+                }).ToArray();
+
                 _skinDef = newSkin;
                 return _skinDef;
             }
@@ -151,5 +161,12 @@ public class SkinDefMoistureUpsetRemix : ScriptableObject
         public HGStandardOverride? materialOverride;
 
         public bool IsValid() => !string.IsNullOrEmpty(smrPath);
+    }
+    
+    [Serializable]
+    public struct ProjectileGhostOverride
+    {
+        public string targetProjectile;
+        public GameObject projectileGhost;
     }
 }

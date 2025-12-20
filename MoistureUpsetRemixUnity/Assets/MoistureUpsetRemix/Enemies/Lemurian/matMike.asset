@@ -17,6 +17,7 @@ MonoBehaviour:
   - rid: 1698329175614816259
   - rid: 1698329175614816260
   - rid: 1698329175614816261
+  - rid: 1698329175614816266
   references:
     version: 2
     RefIds:
@@ -35,3 +36,8 @@ MonoBehaviour:
       data:
         propertyName: _NormalStrength
         value: 0.8
+    - rid: 1698329175614816266
+      type: {class: TextureMaterialPropertyOverride, ns: MoistureUpsetRemix.Common.Materials, asm: MoistureUpsetRemix.Common}
+      data:
+        propertyName: _EmTex
+        value: {fileID: 0}

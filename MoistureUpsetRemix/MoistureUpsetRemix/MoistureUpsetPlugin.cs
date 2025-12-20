@@ -26,6 +26,7 @@ public class MoistureUpsetPlugin : BaseUnityPlugin
         EnemySkinReplacer.Register<Beetle>();
         EnemySkinReplacer.Register<Bison>();
         EnemySkinReplacer.Register<Lemurian>();
+        EnemySkinReplacer.Register<LesserWisp>();
         
         EnemySkinReplacer.Init(Config);
     }

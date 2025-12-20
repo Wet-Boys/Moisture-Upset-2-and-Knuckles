@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1696304386, guid: 7d7794ffcdbe1b76ea9db95ffb265b25, type: 3}
+  m_Name: matDogPlane
+  m_EditorClassIdentifier: 
+  originalMaterialAddressablePath: RoR2/Base/Wisp/matWisp1.mat
+  properties:
+  - rid: 1698329175614816267
+  - rid: 1698329175614816268
+  references:
+    version: 2
+    RefIds:
+    - rid: 1698329175614816267
+      type: {class: TextureMaterialPropertyOverride, ns: MoistureUpsetRemix.Common.Materials, asm: MoistureUpsetRemix.Common}
+      data:
+        propertyName: _MainTex
+        value: {fileID: 2800000, guid: 44b2a1746c225d8499bf6c1284795191, type: 3}
+    - rid: 1698329175614816268
+      type: {class: ColorMaterialPropertyOverride, ns: MoistureUpsetRemix.Common.Materials, asm: MoistureUpsetRemix.Common}
+      data:
+        propertyName: _Color
+        value: {r: 1, g: 1, b: 1, a: 1}

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1244124501, guid: 2dbab076938b0226fa3f54f68437ffd5, type: 3}
-  m_Name: skinFroggyChair
+  m_Name: skinDogPlane
   m_EditorClassIdentifier: 
   msc:
-    prefabAddressablePath: RoR2/Base/Beetle/BeetleBody.prefab
-    mscPath: ModelBase/mdlBeetle
-  targetSkinName: skinBeetleDefault
+    prefabAddressablePath: RoR2/Base/Wisp/WispBody.prefab
+    mscPath: Model Base/mdlWisp1Mouth
+  targetSkinName: skinWispBodyDefault
   smrOverrides:
-  - smrPath: ModelBase/mdlBeetle/Mesh
+  - smrPath: Model Base/mdlWisp1Mouth/Sphere.000
     enableMeshOverride: 1
-    meshOverride: {fileID: 4300000, guid: 4c9d7dcb42e3cace2a49115451da4e22, type: 2}
-    materialOverride: {fileID: 11400000, guid: 43c937ecf6bcc3d7bae804edb79d08dd, type: 2}
+    meshOverride: {fileID: 4300000, guid: 674b09b46960cc02db0f00cd3988a245, type: 2}
+    materialOverride: {fileID: 11400000, guid: f52072b66041b1830b84777bd774a06a, type: 2}
   projectileGhostOverrides: []

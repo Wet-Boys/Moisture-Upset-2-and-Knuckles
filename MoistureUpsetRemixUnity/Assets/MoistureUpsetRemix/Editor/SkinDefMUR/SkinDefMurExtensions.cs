@@ -1,8 +1,9 @@
-using MoistureUpsetRemix.Editor.Utils;
+using MoistureUpsetRemix.Common.Utils;
 using MoistureUpsetRemix.Skins;
 using RoR2;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using AddressableUtils = MoistureUpsetRemix.Editor.Utils.AddressableUtils;
 
 namespace MoistureUpsetRemix.Editor.SkinDefMUR
 {
@@ -51,6 +52,15 @@ namespace MoistureUpsetRemix.Editor.SkinDefMUR
             {
                 Resources.UnloadUnusedAssets();
             }
+        }
+
+        public static ManagedAddressableAsset<GameObject> GetPrefab(this ModelSkinControllerProxy msc)
+        {
+            if (!AddressableUtils.Exists(msc.prefabAddressablePath))
+                return null;
+            
+            var handle = Addressables.LoadAssetAsync<GameObject>(msc.prefabAddressablePath);
+            return new ManagedAddressableAsset<GameObject>(handle);
         }
     }
 }

@@ -25,3 +25,4 @@ MonoBehaviour:
     enableMeshOverride: 1
     meshOverride: {fileID: 4300000, guid: 433190d10fb94ce2e9cb92804796d5fa, type: 2}
     materialOverride: {fileID: 11400000, guid: 96584ed75750efbe380472e9994d97a7, type: 2}
+  projectileGhostOverrides: []

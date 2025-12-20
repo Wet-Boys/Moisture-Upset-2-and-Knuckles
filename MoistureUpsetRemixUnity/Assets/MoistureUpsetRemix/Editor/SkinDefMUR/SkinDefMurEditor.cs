@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using MoistureUpsetRemix.Editor.SkinDefMUR.Preview;
 using MoistureUpsetRemix.Editor.Utils;
 using MoistureUpsetRemix.Editor.Uxml;
 using MoistureUpsetRemix.Editor.Uxml.Attributes;
@@ -14,6 +15,7 @@ namespace MoistureUpsetRemix.Editor.SkinDefMUR
     [CustomEditor(typeof(SkinDefMoistureUpsetRemix))]
     public class SkinDefMurEditor : UxmlEditor
     {
+        private const string OpenPreviewButtonPath = "open-preview-button";
         private const string ModelSkinControllerAreaPath = "model-skin-controller-area";
         private const string SkinRemapDropDownPath = ModelSkinControllerAreaPath + "/msc-skin-remap-dropdown";
         private const string SelectModelSkinControllerButtonPath = ModelSkinControllerAreaPath + "/select-msc-button";
@@ -90,6 +92,14 @@ namespace MoistureUpsetRemix.Editor.SkinDefMUR
             };
             
             PopupWindow.Show(activatorRect, popUp);
+        }
+
+        [BindButtonCallback(OpenPreviewButtonPath)]
+        private void ShowPreview()
+        {
+            var previewWindow = SkinDefMurPreviewEditor.GetOrCreateWindow();
+            previewWindow.Target = Target;
+            previewWindow.Show();
         }
 
         private void SetupSmrOverrideList()

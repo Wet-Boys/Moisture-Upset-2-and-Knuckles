@@ -13,6 +13,7 @@
         <ui:DropdownField label="Skin to Remap" index="-1" name="msc-skin-remap-dropdown" binding-path="targetSkinName" choices="choice" />
         <ui:Button text="Select ModelSkinController" display-tooltip-when-elided="true" name="select-msc-button" />
     </ui:VisualElement>
+    <ui:Button text="Open Preview" display-tooltip-when-elided="true" name="open-preview-button" />
     <ui:Foldout text="Skinned Mesh Renderers" name="smr-override-area" value="true">
         <ui:ListView focusable="true" name="smr-override-list-view" show-add-remove-footer="false" show-foldout-header="false" show-alternating-row-backgrounds="All" show-border="false" virtualization-method="DynamicHeight" fixed-item-height="30" show-bound-collection-size="true" />
     </ui:Foldout>

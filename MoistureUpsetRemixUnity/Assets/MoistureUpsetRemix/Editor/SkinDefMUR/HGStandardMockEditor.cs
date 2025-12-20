@@ -22,6 +22,7 @@ namespace MoistureUpsetRemix.Editor.SkinDefMUR
             if (!_combinedMaterial)
                 return;
             
+            
             CacheProperties();
 
             _materialEditor = (MaterialEditor)CreateEditor(_combinedMaterial);

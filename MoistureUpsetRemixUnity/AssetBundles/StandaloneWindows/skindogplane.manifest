@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 4096222762
+CRC: 2715134007
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e5e1489691e3425134f194faf9a2a0f9
+    Hash: fee0128bde2d1e184ac6baf820502bed
   TypeTreeHash:
     serializedVersion: 2
     Hash: c081a61cf8bc2b5f8ba8cc29261a3dc6
@@ -21,11 +21,13 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
 - AssemblyName: MoistureUpsetRemix.Common
+  ClassName: MoistureUpsetRemix.Common.Materials.ColorMaterialPropertyOverride
+- AssemblyName: MoistureUpsetRemix.Common
   ClassName: MoistureUpsetRemix.Common.Materials.TextureMaterialPropertyOverride
 - AssemblyName: MoistureUpsetRemix.Skins
   ClassName: MoistureUpsetRemix.Skins.ModelSkinControllerProxy
 - AssemblyName: MoistureUpsetRemix.Skins
   ClassName: MoistureUpsetRemix.Skins.SkinDefMoistureUpsetRemix/SkinnedMeshRendererOverride
 Assets:
-- Assets/MoistureUpsetRemix/Enemies/Beetle/skinFroggyChair.asset
+- Assets/MoistureUpsetRemix/Enemies/Wisp/skinDogPlane.asset
 Dependencies: []
