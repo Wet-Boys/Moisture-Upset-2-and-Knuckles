@@ -1,13 +1,38 @@
 Event	ID	Name			Wwise Object Path	Notes
+	4879389	Play_FrogChair_Passive			\Default Work Unit\Play_FrogChair_Passive	
+	989627469	Stop_FrogChair_Spawn			\Default Work Unit\Stop_FrogChair_Spawn	
 	1214003200	Play_Dicks			\Default Work Unit\Play_Dicks	
+	1284277500	Stop_FrogChair_Attack			\Default Work Unit\Stop_FrogChair_Attack	
+	1510751466	Play_FrogChair_Attack			\Default Work Unit\Play_FrogChair_Attack	
+	2002015406	Stop_FrogChair_Death			\Default Work Unit\Stop_FrogChair_Death	
+	3098096783	Stop_FrogChair_Passive			\Default Work Unit\Stop_FrogChair_Passive	
+	3305029568	Play_FrogChair_Death			\Default Work Unit\Play_FrogChair_Death	
+	3431540071	Finish_Dicks			\Default Work Unit\Finish_Dicks	
+	3441279555	Play_FrogChair_Spawn			\Default Work Unit\Play_FrogChair_Spawn	
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
-	272410215	MLGActive			\Default Work Unit\MLGActive	
 	2480686711	Modded_MSX			\Default Work Unit\Modded_MSX	
+	2669477582	Modded_SFX			\Default Work Unit\Modded_SFX	
+	3520357325	Dicks			\Default Work Unit\Dicks	
+	3673881719	Volume_SFX			\Default Work Unit\Volume_SFX	
 	3695994288	Volume_Master			\Default Work Unit\Volume_Master	
 	3729143042	Volume_MSX			\Default Work Unit\Volume_MSX	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	573300004	Dicks_Start	X:\MoistureUpsetRemixLink\MoistureUpsetRemixWWise\.cache\Windows\SFX\Dicks_Start_2A9E8135.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\Music Mixer\CreativeDicks\Dicks_Start		48684
-	748213709	Creative_Start	X:\MoistureUpsetRemixLink\MoistureUpsetRemixWWise\.cache\Windows\SFX\Creative_Start_2A9E8135.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\Music Mixer\CreativeDicks\Creative_Start		48010
+	8247356	chairspawn	Z:\run\media\nunchuk\Elements\other backup\Documents\GitHub\Moisture-Upset-2-and-Knuckles\MoistureUpsetRemixWWise\.cache\Windows\SFX\SFX\chairspawn_2A9E8135.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\Sfx Mixer\Enemies\Frogge\Spawn\chairspawn		4632
+	24889036	Creative_End	Z:\run\media\nunchuk\Elements\other backup\Documents\GitHub\Moisture-Upset-2-and-Knuckles\MoistureUpsetRemixWWise\.cache\Windows\SFX\Creative_End_2A9E8135.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\Music Mixer\CreativeDicks\CreativeContainer\Creative_End		135481
+	25791961	Dicks_Loop	Z:\run\media\nunchuk\Elements\other backup\Documents\GitHub\Moisture-Upset-2-and-Knuckles\MoistureUpsetRemixWWise\.cache\Windows\SFX\Dicks_Loop_2022F313.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\Music Mixer\CreativeDicks\DicksContainer\Dicks_Loop		423864
+	69753870	killifgay	Z:\run\media\nunchuk\Elements\other backup\Documents\GitHub\Moisture-Upset-2-and-Knuckles\MoistureUpsetRemixWWise\.cache\Windows\SFX\SFX\killifgay_2A9E8135.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\Sfx Mixer\Enemies\Frogge\Passive\killifgay		3133
+	220417597	Creative_Loop	Z:\run\media\nunchuk\Elements\other backup\Documents\GitHub\Moisture-Upset-2-and-Knuckles\MoistureUpsetRemixWWise\.cache\Windows\SFX\Creative_Loop_2022F313.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\Music Mixer\CreativeDicks\CreativeContainer\Creative_Loop		436679
+	280775039	chairattack	Z:\run\media\nunchuk\Elements\other backup\Documents\GitHub\Moisture-Upset-2-and-Knuckles\MoistureUpsetRemixWWise\.cache\Windows\SFX\SFX\chairattack_2A9E8135.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\Sfx Mixer\Enemies\Frogge\Attack\chairattack		1592
+	444542746	chairdeath	Z:\run\media\nunchuk\Elements\other backup\Documents\GitHub\Moisture-Upset-2-and-Knuckles\MoistureUpsetRemixWWise\.cache\Windows\SFX\SFX\chairdeath_2A9E8135.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\Sfx Mixer\Enemies\Frogge\Death\chairdeath		3167
+	537772871	bee	Z:\run\media\nunchuk\Elements\other backup\Documents\GitHub\Moisture-Upset-2-and-Knuckles\MoistureUpsetRemixWWise\.cache\Windows\SFX\SFX\bee_2A9E8135.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\Sfx Mixer\Enemies\Frogge\Passive\bee		14795
+	573300004	Dicks_Start	Z:\run\media\nunchuk\Elements\other backup\Documents\GitHub\Moisture-Upset-2-and-Knuckles\MoistureUpsetRemixWWise\.cache\Windows\SFX\Dicks_Start_2A9E8135.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\Music Mixer\CreativeDicks\DicksContainer\Dicks_Start		593841
+	670438103	davidgay	Z:\run\media\nunchuk\Elements\other backup\Documents\GitHub\Moisture-Upset-2-and-Knuckles\MoistureUpsetRemixWWise\.cache\Windows\SFX\SFX\davidgay_2A9E8135.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\Sfx Mixer\Enemies\Frogge\Passive\davidgay		9383
+	708228720	Dicks_End	Z:\run\media\nunchuk\Elements\other backup\Documents\GitHub\Moisture-Upset-2-and-Knuckles\MoistureUpsetRemixWWise\.cache\Windows\SFX\Dicks_End_2A9E8135.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\Music Mixer\CreativeDicks\DicksContainer\Dicks_End		146652
+	730562032	rickroll	Z:\run\media\nunchuk\Elements\other backup\Documents\GitHub\Moisture-Upset-2-and-Knuckles\MoistureUpsetRemixWWise\.cache\Windows\SFX\SFX\rickroll_2A9E8135.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\Sfx Mixer\Enemies\Frogge\Passive\rickroll		9748
+	748213709	Creative_Start	Z:\run\media\nunchuk\Elements\other backup\Documents\GitHub\Moisture-Upset-2-and-Knuckles\MoistureUpsetRemixWWise\.cache\Windows\SFX\Creative_Start_2A9E8135.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\Music Mixer\CreativeDicks\CreativeContainer\Creative_Start		606748
+	767004672	killyou	Z:\run\media\nunchuk\Elements\other backup\Documents\GitHub\Moisture-Upset-2-and-Knuckles\MoistureUpsetRemixWWise\.cache\Windows\SFX\SFX\killyou_2A9E8135.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\Sfx Mixer\Enemies\Frogge\Passive\killyou		6160
+	856166507	whatdidyoujustsaytome	Z:\run\media\nunchuk\Elements\other backup\Documents\GitHub\Moisture-Upset-2-and-Knuckles\MoistureUpsetRemixWWise\.cache\Windows\SFX\SFX\whatdidyoujustsaytome_2A9E8135.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\Sfx Mixer\Enemies\Frogge\Passive\whatdidyoujustsaytome		10058
+	1043806718	duwang	Z:\run\media\nunchuk\Elements\other backup\Documents\GitHub\Moisture-Upset-2-and-Knuckles\MoistureUpsetRemixWWise\.cache\Windows\SFX\SFX\duwang_2A9E8135.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\Sfx Mixer\Enemies\Frogge\Passive\duwang		5224
 

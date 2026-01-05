@@ -2807,6 +2807,11 @@
 													<ChildrenList>
 														<Sound Name="chairattack" ID="{91FFBB33-51A1-47C3-B68F-98C916CFE6B4}" ShortID="57171309">
 															<PropertyList>
+																<Property Name="InitialDelay" Type="Real64">
+																	<ValueList>
+																		<Value>0.5</Value>
+																	</ValueList>
+																</Property>
 																<Property Name="Volume" Type="Real64">
 																	<ValueList>
 																		<Value>28</Value>
@@ -3129,6 +3134,9 @@
 													</ActiveSourceList>
 												</Sound>
 												<Sound Name="gnomelaughing" ID="{68AFDBB5-6E90-48BB-866D-AE7E51CAC776}" ShortID="525082421">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E10FD967-B3CD-4C8F-A771-A161BD020D46}"/>

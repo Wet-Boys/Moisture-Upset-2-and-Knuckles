@@ -5,7 +5,16 @@
 			<ChildrenList>
 				<SoundBank Name="TestBank" ID="{7844CEDD-47E7-471C-8335-616FC90648EA}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Play_FrogChair_Death" ID="{756127F2-9606-442F-847E-953BC0E449DE}" WorkUnitID="{A1642724-D84B-43D1-90DD-6BBECDE07BE1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Finish_Dicks" ID="{F95219CC-7EB7-446D-B9A5-E852131B4784}" WorkUnitID="{A1642724-D84B-43D1-90DD-6BBECDE07BE1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_FrogChair_Death" ID="{BD1C8597-6FF2-4658-A4AD-8BB1128EE29F}" WorkUnitID="{A1642724-D84B-43D1-90DD-6BBECDE07BE1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Dicks" ID="{9EA90654-539E-47D0-AD4F-19115CF900E7}" WorkUnitID="{A1642724-D84B-43D1-90DD-6BBECDE07BE1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_FrogChair_Spawn" ID="{F7A5C411-46BF-4831-9AE7-AC1919F486AA}" WorkUnitID="{A1642724-D84B-43D1-90DD-6BBECDE07BE1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_FrogChair_Attack" ID="{A7255723-C5D8-4ADD-9A35-90E45F5F1B12}" WorkUnitID="{A1642724-D84B-43D1-90DD-6BBECDE07BE1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_FrogChair_Attack" ID="{BAFAE7F1-F5DF-4B6C-9CE4-38BB9BDB100F}" WorkUnitID="{A1642724-D84B-43D1-90DD-6BBECDE07BE1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_FrogChair_Passive" ID="{EE207422-4650-4F07-A01B-FC966928C491}" WorkUnitID="{A1642724-D84B-43D1-90DD-6BBECDE07BE1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_FrogChair_Spawn" ID="{34873C54-07EC-4F5D-B9A2-EE8F12D2BD6B}" WorkUnitID="{A1642724-D84B-43D1-90DD-6BBECDE07BE1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_FrogChair_Passive" ID="{FC5474C6-64D1-4F9C-9C83-21AFB575F546}" WorkUnitID="{A1642724-D84B-43D1-90DD-6BBECDE07BE1}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

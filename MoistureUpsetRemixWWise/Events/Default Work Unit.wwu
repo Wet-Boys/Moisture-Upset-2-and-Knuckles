@@ -46,6 +46,80 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_FrogChair_Attack" ID="{BAFAE7F1-F5DF-4B6C-9CE4-38BB9BDB100F}">
+					<ChildrenList>
+						<Action Name="" ID="{FE7D635D-E2BA-4EEE-B3E4-0C39708EC13C}" ShortID="332265612">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Attack" ID="{14055502-7862-4DA8-9F95-33700F5F6E26}" WorkUnitID="{3C8220E1-44AE-4541-90E8-A5E99A93DADF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_FrogChair_Death" ID="{756127F2-9606-442F-847E-953BC0E449DE}">
+					<ChildrenList>
+						<Action Name="" ID="{6EEEF185-927B-4D2D-BCDF-C2A140DACBAC}" ShortID="553754599">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Death" ID="{56D6CB43-7FE7-4395-B4EB-B9A81CF6DE13}" WorkUnitID="{3C8220E1-44AE-4541-90E8-A5E99A93DADF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{4960113C-2579-4BC7-8AEF-E491E099E96D}" ShortID="85986599">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Attack" ID="{14055502-7862-4DA8-9F95-33700F5F6E26}" WorkUnitID="{3C8220E1-44AE-4541-90E8-A5E99A93DADF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{8EB86D16-253F-4CE6-98B3-10C57325E378}" ShortID="445199103">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Passive" ID="{5695450A-AB1C-4DB0-96D1-39513E58307C}" WorkUnitID="{3C8220E1-44AE-4541-90E8-A5E99A93DADF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{1A2717CC-1391-48BC-809B-3C984018C559}" ShortID="475414648">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Spawn" ID="{6F10135C-5AF6-4B69-A6EB-62B4B5D4B2F5}" WorkUnitID="{3C8220E1-44AE-4541-90E8-A5E99A93DADF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_FrogChair_Spawn" ID="{34873C54-07EC-4F5D-B9A2-EE8F12D2BD6B}">
+					<ChildrenList>
+						<Action Name="" ID="{9FC1E9AF-EA17-4206-B628-3F027E7FCDD0}" ShortID="1004702617">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Spawn" ID="{6F10135C-5AF6-4B69-A6EB-62B4B5D4B2F5}" WorkUnitID="{3C8220E1-44AE-4541-90E8-A5E99A93DADF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_FrogChair_Passive" ID="{FC5474C6-64D1-4F9C-9C83-21AFB575F546}">
+					<ChildrenList>
+						<Action Name="" ID="{F3799B31-3F44-4CFF-9FC0-CC19A2120CF8}" ShortID="65886011">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Passive" ID="{5695450A-AB1C-4DB0-96D1-39513E58307C}" WorkUnitID="{3C8220E1-44AE-4541-90E8-A5E99A93DADF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

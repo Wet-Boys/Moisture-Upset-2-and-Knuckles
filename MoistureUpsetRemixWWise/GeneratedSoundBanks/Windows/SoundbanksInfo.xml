@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{7721D724-F195-BD77-83BC-3D741F531663}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{B85FC237-4279-F7B9-238E-A8D2FF20C540}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -39,40 +39,138 @@
 				<GameParameter Id="3174072268" Name="RuneBadNoise"/>
 				<GameParameter Id="3314531505" Name="isInPortalRange"/>
 				<GameParameter Id="3448896237" Name="BossMusicActive"/>
+				<GameParameter Id="3520357325" Name="Dicks"/>
 				<GameParameter Id="3673881719" Name="Volume_SFX"/>
 				<GameParameter Id="3695994288" Name="Volume_Master"/>
 				<GameParameter Id="3729143042" Name="Volume_MSX"/>
 				<GameParameter Id="4014092120" Name="teleporterDirection"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3291379323" Type="User" Language="SFX" Hash="{1CAECF81-CF77-A0DD-708F-B15EB7D76CB7}">
+		<SoundBank Id="3291379323" Type="User" Language="SFX" Hash="{031B8B61-3581-DB36-5DCF-D77A37052914}">
 			<ShortName>TestBank</ShortName>
 			<Path>TestBank.bnk</Path>
 			<Media>
+				<File Id="8247356" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX\chairspawn.wav</ShortName>
+					<CachePath>SFX/SFX/chairspawn_2A9E8135.wem</CachePath>
+				</File>
+				<File Id="24889036" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Creative_End.wav</ShortName>
+					<CachePath>SFX/Creative_End_2A9E8135.wem</CachePath>
+				</File>
+				<File Id="25791961" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Dicks_Loop.wav</ShortName>
+					<CachePath>SFX/Dicks_Loop_2022F313.wem</CachePath>
+				</File>
+				<File Id="69753870" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX\killifgay.wav</ShortName>
+					<CachePath>SFX/SFX/killifgay_2A9E8135.wem</CachePath>
+				</File>
+				<File Id="220417597" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Creative_Loop.wav</ShortName>
+					<CachePath>SFX/Creative_Loop_2022F313.wem</CachePath>
+				</File>
+				<File Id="280775039" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX\chairattack.wav</ShortName>
+					<CachePath>SFX/SFX/chairattack_2A9E8135.wem</CachePath>
+				</File>
+				<File Id="444542746" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX\chairdeath.wav</ShortName>
+					<CachePath>SFX/SFX/chairdeath_2A9E8135.wem</CachePath>
+				</File>
+				<File Id="537772871" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX\bee.wav</ShortName>
+					<CachePath>SFX/SFX/bee_2A9E8135.wem</CachePath>
+				</File>
 				<File Id="573300004" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Dicks_Start.wav</ShortName>
 					<CachePath>SFX/Dicks_Start_2A9E8135.wem</CachePath>
+				</File>
+				<File Id="670438103" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX\davidgay.wav</ShortName>
+					<CachePath>SFX/SFX/davidgay_2A9E8135.wem</CachePath>
+				</File>
+				<File Id="708228720" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Dicks_End.wav</ShortName>
+					<CachePath>SFX/Dicks_End_2A9E8135.wem</CachePath>
+				</File>
+				<File Id="730562032" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX\rickroll.wav</ShortName>
+					<CachePath>SFX/SFX/rickroll_2A9E8135.wem</CachePath>
 				</File>
 				<File Id="748213709" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Creative_Start.wav</ShortName>
 					<CachePath>SFX/Creative_Start_2A9E8135.wem</CachePath>
 				</File>
+				<File Id="767004672" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX\killyou.wav</ShortName>
+					<CachePath>SFX/SFX/killyou_2A9E8135.wem</CachePath>
+				</File>
+				<File Id="856166507" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX\whatdidyoujustsaytome.wav</ShortName>
+					<CachePath>SFX/SFX/whatdidyoujustsaytome_2A9E8135.wem</CachePath>
+				</File>
+				<File Id="1043806718" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX\duwang.wav</ShortName>
+					<CachePath>SFX/SFX/duwang_2A9E8135.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
+				<Event Id="3431540071" Name="Finish_Dicks">
+					<MediaRefs>
+						<MediaRef Id="708228720"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1214003200" Name="Play_Dicks">
 					<MediaRefs>
+						<MediaRef Id="24889036"/>
+						<MediaRef Id="25791961"/>
+						<MediaRef Id="220417597"/>
 						<MediaRef Id="573300004"/>
+						<MediaRef Id="708228720"/>
 						<MediaRef Id="748213709"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1510751466" Name="Play_FrogChair_Attack">
+					<MediaRefs>
+						<MediaRef Id="280775039"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3305029568" Name="Play_FrogChair_Death">
+					<MediaRefs>
+						<MediaRef Id="444542746"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4879389" Name="Play_FrogChair_Passive">
+					<MediaRefs>
+						<MediaRef Id="69753870"/>
+						<MediaRef Id="537772871"/>
+						<MediaRef Id="670438103"/>
+						<MediaRef Id="730562032"/>
+						<MediaRef Id="767004672"/>
+						<MediaRef Id="856166507"/>
+						<MediaRef Id="1043806718"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3441279555" Name="Play_FrogChair_Spawn">
+					<MediaRefs>
+						<MediaRef Id="8247356"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1284277500" Name="Stop_FrogChair_Attack"/>
+				<Event Id="2002015406" Name="Stop_FrogChair_Death"/>
+				<Event Id="3098096783" Name="Stop_FrogChair_Passive"/>
+				<Event Id="989627469" Name="Stop_FrogChair_Spawn"/>
 			</Events>
 			<GameParameters>
-				<GameParameter Id="272410215" Name="MLGActive"/>
 				<GameParameter Id="2480686711" Name="Modded_MSX"/>
+				<GameParameter Id="2669477582" Name="Modded_SFX"/>
+				<GameParameter Id="3520357325" Name="Dicks"/>
+				<GameParameter Id="3673881719" Name="Volume_SFX"/>
 				<GameParameter Id="3695994288" Name="Volume_Master"/>
 				<GameParameter Id="3729143042" Name="Volume_MSX"/>
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{22D44659-0BB6-3A9B-B9DA-E02FAEBA1F57}</FileHash>
+	<FileHash>{51E4963B-E9B4-FAD8-2A44-B4B1C74AC294}</FileHash>
 </SoundBanksInfo>

@@ -25,6 +25,7 @@ public class MoistureUpsetPlugin : BaseUnityPlugin
         // {
         //     orig(self, menu);
         // };
-        Beetle.ReplaceModel();
+        Beetle.ReplaceAll();
+        AudioReplacements.ReplaceAudio();
     }
 }

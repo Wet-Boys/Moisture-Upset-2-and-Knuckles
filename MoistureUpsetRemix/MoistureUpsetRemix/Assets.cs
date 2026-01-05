@@ -89,11 +89,14 @@ internal static class Assets
 
     internal static void PopulateAssets()
     {
+        DebugClass.Log($"============= adding assets");
         string[] resourceNames = Assembly.GetExecutingAssembly().GetManifestResourceNames();
 
         foreach (var resource in resourceNames)
         {
+            DebugClass.Log($"============= adding asset {resource}");
             ResourceType resourceType = GetResourceType(resource);
+            DebugClass.Log($"============= adding asset {resourceType}");
 
             switch (resourceType)
             {
@@ -103,6 +106,7 @@ internal static class Assets
                     break;
                 case ResourceType.SoundBank:
                     FoundSoundBanks.Add(resource);
+                    DebugClass.Log($"added soundbank {resource}");
                     break;
                 case ResourceType.DisplayRuleSetOverride:
                     DisplayRuleSetOverrides.Add(GetFileName(resource).Split('.')[0], resource);
